@@ -394,16 +394,16 @@ body.home .hero-title {
 
 .meadow .meadow-cat {
   z-index: 3;
-  left: 41%;
-  bottom: 21%;
-  width: 18%;
+  left: 55%;
+  bottom: 38%;
+  width: 14%;
   animation: cat-jump 1.7s cubic-bezier(0.3, 0.7, 0.4, 1) infinite;
 }
 
 @keyframes cat-jump {
-  0%, 100% { transform: translateY(14%); }
-  42%      { transform: translateY(-62%); }
-  82%      { transform: translateY(14%); }
+  0%, 100% { transform: translateY(8%); }
+  42%      { transform: translateY(-40%); }
+  82%      { transform: translateY(8%); }
 }
 
 /* ==========================================================================
