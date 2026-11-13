@@ -17,8 +17,10 @@ body.home {
   --meadow: #5aa84e;              /* mesma cor da base de hills.svg */
   --meadow-deep: #3f8a52;
   --forest: #2a6a42;
-  background-color: var(--meadow-deep);
+  background-color: #cdeafc;
   font-family: var(--px-font);
+  font-variant-ligatures: none;          /* evita o 'fi' esquisito da Pixelify Sans */
+  font-feature-settings: 'liga' 0, 'clig' 0;
 }
 
 /* ==========================================================================
@@ -102,10 +104,10 @@ body.home {
   left: 0;
   right: 0;
   top: 100%;
-  height: 78px;
+  height: 84px;
   z-index: 1;
   pointer-events: none;
-  background: url('../assets/images/home/cloud-strip.svg') repeat-x 0 0 / 360px 78px;
+  background: url('../assets/images/home/cloud-strip.svg') repeat-x 0 0 / 432px 84px;
   image-rendering: pixelated;
 }
 
@@ -228,49 +230,48 @@ body.home {
 }
 
 /* ==========================================================================
-   Hero: céu, logo e texto
+   Céu da página inteira + hero
    ========================================================================== */
-.hero {
+main {
   position: relative;
-  padding-top: 6rem;                 /* deixa respirar abaixo das nuvens da navbar */
-  overflow: hidden;
-  background: linear-gradient(180deg, #62bff4 0%, #8dd3f9 45%, #c3e9fc 100%);
+  background: linear-gradient(180deg, #62bff4 0%, #86d1f9 14%, #aee0fb 42%, #cdeafc 100%);
 }
 
-/* grande halo claro atrás do cenário, como na referência */
-.hero::before {
-  content: '';
-  position: absolute;
-  left: 50%;
-  top: 40%;
-  width: clamp(720px, 125%, 1500px);
-  aspect-ratio: 1;
-  transform: translateX(-50%);
-  border-radius: 50%;
-  background: radial-gradient(circle, #d5f0fe 0 62%, rgba(213, 240, 254, 0.55) 62.5% 100%);
-  pointer-events: none;
-}
-
-.hero-sky {
+.page-sky {
   position: absolute;
   inset: 0;
+  z-index: 0;
+  overflow: hidden;
   pointer-events: none;
 }
 
 .sky-cloud {
   position: absolute;
   left: 0;
+  top: var(--top);
+  width: var(--w);
+  height: auto;
   image-rendering: pixelated;
-  animation: sky-drift linear infinite;
+  animation: sky-drift var(--dur) linear infinite;
+  animation-delay: var(--delay);
 }
 
-.sky-cloud--1 { top: 18%; width: 150px; animation-duration: 95s;  animation-delay: -30s; }
-.sky-cloud--2 { top: 44%; width: 112px; animation-duration: 130s; animation-delay: -95s; opacity: 0.95; }
-.sky-cloud--3 { top: 31%; width: 130px; animation-duration: 110s; animation-delay: -60s; }
-
 @keyframes sky-drift {
-  from { transform: translateX(-200px); }
-  to   { transform: translateX(calc(100vw + 200px)); }
+  from { transform: translateX(-220px); }
+  to   { transform: translateX(calc(100vw + 220px)); }
+}
+
+.hero,
+.page-sections {
+  position: relative;
+  z-index: 1;
+}
+
+.hero {
+  padding-top: 6.75rem;                 /* respiro abaixo das nuvens da navbar */
+  padding-bottom: 1rem;
+  /* brilho suave atrás do título, sem bordas duras */
+  background: radial-gradient(ellipse 62% 58% at 50% 52%, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0) 72%);
 }
 
 .hero-inner {
@@ -345,7 +346,7 @@ body.home .hero-title {
   --cell: calc(min(100vw, 960px) / 160);   /* 1 "pixel" do SVG das colinas */
   position: relative;
   z-index: 1;
-  margin-top: 1.5rem;
+  margin-top: 0;
   /* estende o gramado para os lados em telas maiores que 960px */
   background: linear-gradient(
     to top,
@@ -396,20 +397,21 @@ body.home .hero-title {
   left: 41%;
   bottom: 21%;
   width: 18%;
-  animation: cat-bob 1.1s steps(2) infinite alternate;
+  animation: cat-jump 1.7s cubic-bezier(0.3, 0.7, 0.4, 1) infinite;
 }
 
-@keyframes cat-bob {
-  from { transform: translateY(0); }
-  to   { transform: translateY(-9%); }
+@keyframes cat-jump {
+  0%, 100% { transform: translateY(14%); }
+  42%      { transform: translateY(-62%); }
+  82%      { transform: translateY(14%); }
 }
 
 /* ==========================================================================
    Conteúdo abaixo do hero (sobre o gramado)
    ========================================================================== */
-.meadow-content {
-  background: linear-gradient(180deg, var(--meadow) 0, var(--meadow-deep) 340px, var(--meadow-deep) 100%);
-  padding-bottom: 5rem;
+/* Seções sobre o céu */
+.page-sections {
+  padding-bottom: 4rem;
 }
 
 body.home .section-showcase { padding-top: 2.5rem; }
@@ -421,8 +423,8 @@ body.home .cta-banner-title {
   font-size: clamp(1.7rem, 3.2vw, 2.3rem);
   line-height: 1.2;
   letter-spacing: 0.3px;
-  color: #ffffff;
-  text-shadow: 3px 3px 0 #1d4a2c;
+  color: var(--ink);
+  text-shadow: 3px 3px 0 #ffffff;
 }
 
 body.home .section-desc {
@@ -430,8 +432,8 @@ body.home .section-desc {
   font-weight: 500;
   font-size: 1.2rem;
   line-height: 1.5;
-  color: #f6fff0;
-  text-shadow: 2px 2px 0 rgba(29, 74, 44, 0.85);
+  color: var(--ink);
+  text-shadow: 2px 2px 0 rgba(255, 255, 255, 0.85);
 }
 
 /* Cards no estilo "janela de jogo" */
@@ -554,14 +556,18 @@ body.home .cta-banner-desc {
 }
 
 /* ==========================================================================
-   Rodapé: gramado escuro com texto branco
+   Rodapé: o único lugar com grama (colinas, árvores, gatinho pulando)
    ========================================================================== */
 .site-footer {
   position: relative;
-  padding: 5.5rem 1.5rem 2rem;
+  overflow: hidden;
+  margin-top: 1rem;
   color: #ffffff;
-  background: var(--forest) url('../assets/images/home/footer-edge.svg') repeat-x 0 0 / 192px 56px;
-  image-rendering: auto;
+}
+
+.footer-body {
+  padding: 2.75rem 1.5rem 2rem;
+  background: linear-gradient(180deg, #5aa84e 0, #3f8a52 120px, var(--forest) 100%);
 }
 
 .site-footer-grid {
@@ -579,7 +585,8 @@ body.home .cta-banner-desc {
   font-weight: 500;
   font-size: 1.05rem;
   line-height: 1.5;
-  color: rgba(255, 255, 255, 0.94);
+  color: #ffffff;
+  text-shadow: 1px 1px 0 rgba(29, 74, 44, 0.6);
 }
 
 .footer-credits { margin-top: 0.75rem; }
@@ -608,7 +615,8 @@ body.home .footer-heading {
   font-size: 1.15rem;
   color: #ffffff;
   text-decoration: none;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.35);
+  text-shadow: 1px 1px 0 rgba(29, 74, 44, 0.6);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.4);
   padding-bottom: 0.1rem;
   transition: color 0.15s, border-color 0.15s;
 }
@@ -622,12 +630,12 @@ body.home .footer-heading {
   max-width: 960px;
   margin: 2.5rem auto 0;
   padding-top: 1.25rem;
-  text-align: center;
+  text-align: left;
   font-family: var(--px-font);
   font-weight: 600;
   font-size: 1.05rem;
   color: #ffffff;
-  border-top: 3px dashed rgba(255, 255, 255, 0.35);
+  border-top: 3px dashed rgba(255, 255, 255, 0.4);
 }
 
 @media (max-width: 479px) {
@@ -645,7 +653,7 @@ body.home .footer-heading {
   .hero-logo,
   .meadow .meadow-cat { animation: none; }
 
-  .sky-cloud--1 { left: 6%; }
-  .sky-cloud--2 { left: 74%; }
-  .sky-cloud--3 { left: 80%; }
+  .sky-cloud:nth-child(odd)  { left: 8%; }
+  .sky-cloud:nth-child(even) { left: 72%; }
+  .meadow .meadow-cat { transform: translateY(-8%); }
 }

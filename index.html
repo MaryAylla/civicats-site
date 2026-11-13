@@ -60,14 +60,20 @@
 
   <main id="conteudo-principal">
 
-    <!-- HERO: céu, logo, apresentação e o gramado com árvores e o gatinho -->
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-sky" aria-hidden="true">
-        <img src="assets/images/home/cloud-a.svg" alt="" class="sky-cloud sky-cloud--1">
-        <img src="assets/images/home/cloud-b.svg" alt="" class="sky-cloud sky-cloud--2">
-        <img src="assets/images/home/cloud-a.svg" alt="" class="sky-cloud sky-cloud--3">
-      </div>
+    <!-- Nuvens decorativas pelo céu da página inteira -->
+    <div class="page-sky" aria-hidden="true">
+      <img src="assets/images/home/cloud-a.svg" alt="" class="sky-cloud" style="--top:7%;  --w:150px; --dur:110s; --delay:-30s">
+      <img src="assets/images/home/cloud-b.svg" alt="" class="sky-cloud" style="--top:15%; --w:110px; --dur:150s; --delay:-110s">
+      <img src="assets/images/home/cloud-a.svg" alt="" class="sky-cloud" style="--top:27%; --w:130px; --dur:125s; --delay:-70s">
+      <img src="assets/images/home/cloud-b.svg" alt="" class="sky-cloud" style="--top:41%; --w:120px; --dur:140s; --delay:-20s">
+      <img src="assets/images/home/cloud-a.svg" alt="" class="sky-cloud" style="--top:55%; --w:140px; --dur:115s; --delay:-90s">
+      <img src="assets/images/home/cloud-b.svg" alt="" class="sky-cloud" style="--top:68%; --w:105px; --dur:160s; --delay:-50s">
+      <img src="assets/images/home/cloud-a.svg" alt="" class="sky-cloud" style="--top:80%; --w:135px; --dur:130s; --delay:-120s">
+      <img src="assets/images/home/cloud-b.svg" alt="" class="sky-cloud" style="--top:91%; --w:115px; --dur:145s; --delay:-10s">
+    </div>
 
+    <!-- HERO: logo e apresentação sobre o céu -->
+    <section class="hero" aria-labelledby="hero-title">
       <div class="hero-inner">
         <img
           src="assets/images/logo-civicats.png"
@@ -88,33 +94,9 @@
         </div>
       </div>
 
-      <!-- Cenário: colinas, árvores e o gatinho (decorativo) -->
-      <div class="meadow-wrap" aria-hidden="true">
-        <div class="meadow">
-          <img src="assets/images/home/hills.svg" alt="" class="meadow-hills">
-
-          <img src="assets/images/home/tree-pink.svg"  alt="" class="tree" style="--x:7;   --w:12; --b:23.6">
-          <img src="assets/images/home/tree-green.svg" alt="" class="tree" style="--x:17;  --w:15; --b:44.4">
-          <img src="assets/images/home/tree-green.svg" alt="" class="tree" style="--x:29;  --w:13; --b:55.6">
-          <img src="assets/images/home/tree-pink.svg"  alt="" class="tree" style="--x:41;  --w:10; --b:55.6">
-          <img src="assets/images/home/tree-green.svg" alt="" class="tree" style="--x:108; --w:11; --b:40.3">
-          <img src="assets/images/home/tree-pink.svg"  alt="" class="tree" style="--x:120; --w:15; --b:48.6">
-          <img src="assets/images/home/tree-pink.svg"  alt="" class="tree" style="--x:135; --w:13; --b:44.4">
-          <img src="assets/images/home/tree-green.svg" alt="" class="tree" style="--x:149; --w:12; --b:27.8">
-
-          <img src="assets/images/home/tuft.svg" alt="" class="tuft" style="--x:58;  --w:6;   --b:21">
-          <img src="assets/images/home/tuft.svg" alt="" class="tuft" style="--x:100; --w:5;   --b:20">
-          <img src="assets/images/home/tuft.svg" alt="" class="tuft" style="--x:50;  --w:4;   --b:15">
-
-          <!-- Mascote: troque por um sprite de corpo inteiro (ex.: assets/images/cat-run.png) quando quiser -->
-          <img src="assets/images/cat-avatar.png" alt="" class="meadow-cat">
-
-          <img src="assets/images/home/hills-front.svg" alt="" class="meadow-front">
-        </div>
-      </div>
     </section>
 
-    <div class="meadow-content">
+    <div class="page-sections">
 
       <!-- Showcase do Jogo com Vídeo -->
       <section class="section section-showcase reveal-item">
@@ -271,8 +253,33 @@
     </div>
   </main>
 
-  <!-- Rodapé: gramado escuro com texto branco -->
+  <!-- Rodapé: único lugar com grama (colinas, árvores e o gatinho pulando) -->
   <footer class="site-footer">
+    <div class="meadow-wrap" aria-hidden="true">
+    <div class="meadow">
+      <img src="assets/images/home/hills.svg" alt="" class="meadow-hills">
+
+      <img src="assets/images/home/tree-pink.svg"  alt="" class="tree" style="--x:7;   --w:12; --b:23.6">
+      <img src="assets/images/home/tree-green.svg" alt="" class="tree" style="--x:17;  --w:15; --b:44.4">
+      <img src="assets/images/home/tree-green.svg" alt="" class="tree" style="--x:29;  --w:13; --b:55.6">
+      <img src="assets/images/home/tree-pink.svg"  alt="" class="tree" style="--x:41;  --w:10; --b:55.6">
+      <img src="assets/images/home/tree-green.svg" alt="" class="tree" style="--x:108; --w:11; --b:40.3">
+      <img src="assets/images/home/tree-pink.svg"  alt="" class="tree" style="--x:120; --w:15; --b:48.6">
+      <img src="assets/images/home/tree-pink.svg"  alt="" class="tree" style="--x:135; --w:13; --b:44.4">
+      <img src="assets/images/home/tree-green.svg" alt="" class="tree" style="--x:149; --w:12; --b:27.8">
+
+      <img src="assets/images/home/tuft.svg" alt="" class="tuft" style="--x:58;  --w:6;   --b:21">
+      <img src="assets/images/home/tuft.svg" alt="" class="tuft" style="--x:100; --w:5;   --b:20">
+      <img src="assets/images/home/tuft.svg" alt="" class="tuft" style="--x:50;  --w:4;   --b:15">
+
+      <!-- Mascote pulando: troque por um sprite de corpo inteiro (ex.: assets/images/cat-run.png) quando quiser -->
+      <img src="assets/images/cat-avatar.png" alt="" class="meadow-cat">
+
+      <img src="assets/images/home/hills-front.svg" alt="" class="meadow-front">
+    </div>
+      </div>
+
+    <div class="footer-body">
     <div class="site-footer-grid">
       <div class="footer-col footer-about">
         <a href="index.html" class="site-brand site-brand--light" aria-label="CiviCats - Página Inicial">
@@ -296,6 +303,7 @@
     </div>
 
     <p class="footer-copy">&copy; 2026 CiviCats. Todos os direitos reservados.</p>
+    </div>
   </footer>
 
   <script src="js/main.js"></script>
