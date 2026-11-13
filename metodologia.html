@@ -6,367 +6,463 @@
   <meta name="description" content="Fundamentação teórica, metodologia, acessibilidade, resultados de campo e validação científica do projeto CiviCats para o Ceará Científico.">
   <meta name="theme-color" content="#7ecbf7">
 
-  <title>CiviCats | Metodologia & Pesquisa Científica</title>
+  <title>CiviCats | Metodologia &amp; Pesquisa Científica</title>
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="assets/images/cat-avatar.png">
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
 
-  <!-- Google Fonts: Press Start 2P + Plus Jakarta Sans -->
+  <!-- Google Fonts: Pixelify Sans (visual pixel art) + Plus Jakarta Sans (textos longos) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Estilos -->
+  <!-- Estilos: base + tema novo (home.css) + camadas das páginas internas -->
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/inner.css">
+  <link rel="stylesheet" href="css/metodologia.css">
 </head>
-<body>
-  <!-- Nuvens Flutuantes de Fundo -->
-  <div class="cloud-bg-layer" aria-hidden="true">
-    <div class="cloud-item cloud-1"></div>
-    <div class="cloud-item cloud-2"></div>
-  </div>
-
+<body class="home inner page-metodologia">
   <!-- Acessibilidade: Atalho de Teclado -->
   <a href="#conteudo-principal" class="skip-link">Pular para o conteúdo principal</a>
 
-  <!-- Cabeçalho Institucional -->
-  <header class="header">
-    <div class="container header-container">
-      <a href="index.html" class="brand" aria-label="CiviCats Página Inicial">
-        <img src="assets/images/cat-avatar.png" alt="Ícone do Gatinho CiviCats" class="brand-cat-icon">
-        <img src="assets/images/logo-civicats.png" alt="CiviCats" class="brand-logo-nav">
+  <header class="site-header">
+    <div class="site-header-bar">
+      <a href="index.html" class="site-brand" aria-label="CiviCats - Página Inicial">
+        <img src="assets/images/cat-avatar.png" alt="" class="site-brand-icon" width="40" height="32">
+        <img src="assets/images/logo-civicats.png" alt="CiviCats" class="site-brand-logo" width="1349" height="424">
       </a>
 
-      <!-- Menu Mobile -->
-      <button 
-        class="mobile-toggle" 
-        id="menu-toggle" 
-        aria-label="Abrir menu de navegação" 
-        aria-expanded="false" 
+      <!-- Botão Hamburguer Mobile -->
+      <button
+        class="menu-btn"
+        id="menu-toggle"
+        aria-label="Abrir menu de navegação"
+        aria-expanded="false"
         aria-controls="nav-menu"
       >
-        <span class="hamburger-bar"></span>
-        <span class="hamburger-bar"></span>
-        <span class="hamburger-bar"></span>
+        <span class="menu-bar"></span>
+        <span class="menu-bar"></span>
+        <span class="menu-bar"></span>
       </button>
 
       <!-- Navegação Principal -->
-      <nav class="nav" id="nav-menu" aria-label="Navegação do site">
-        <ul class="nav-list">
-          <li><a href="index.html" class="nav-link">Início</a></li>
-          <li><a href="modulos.html" class="nav-link">Os Módulos</a></li>
-          <li><a href="metodologia.html" class="nav-link active" aria-current="page">Metodologia</a></li>
-          <li><a href="sobre.html" class="nav-link">Sobre & Contato</a></li>
-          <li><a href="downloads.html" class="btn btn-wood btn-nav-compact">Baixar</a></li>
+      <nav class="top-nav" id="nav-menu" aria-label="Navegação do site">
+        <ul class="top-nav-list">
+          <li><a href="index.html" class="top-nav-link">Início</a></li>
+          <li><a href="modulos.html" class="top-nav-link">Módulos</a></li>
+          <li><a href="metodologia.html" class="top-nav-link is-current" aria-current="page">Metodologia</a></li>
+          <li><a href="sobre.html" class="top-nav-link">Sobre &amp; Contato</a></li>
+          <li><a href="downloads.html" class="btn-pixel btn-pixel--sm">Baixar</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
+  <!-- Índice lateral: mostra em qual seção você está (aparece em telas largas) -->
+  <nav class="section-rail" id="section-rail" aria-label="Seções desta página">
+    <ol>
+      <li><a href="#introducao" data-target="introducao"><span class="rail-label">Introdução</span><span class="rail-dot" aria-hidden="true"></span></a></li>
+      <li><a href="#metodo" data-target="metodo"><span class="rail-label">Metodologia</span><span class="rail-dot" aria-hidden="true"></span></a></li>
+      <li><a href="#acessibilidade" data-target="acessibilidade"><span class="rail-label">Acessibilidade</span><span class="rail-dot" aria-hidden="true"></span></a></li>
+      <li><a href="#resultados" data-target="resultados"><span class="rail-label">Resultados</span><span class="rail-dot" aria-hidden="true"></span></a></li>
+      <li><a href="#conclusao" data-target="conclusao"><span class="rail-label">Considerações</span><span class="rail-dot" aria-hidden="true"></span></a></li>
+    </ol>
+  </nav>
+
   <main id="conteudo-principal">
+
+    <!-- Nuvens decorativas pelo céu da página inteira -->
+    <div class="page-sky" aria-hidden="true">
+      <img src="assets/images/home/cloud-a.svg" alt="" class="sky-cloud" style="--top:7%;  --w:150px; --dur:110s; --delay:-30s">
+      <img src="assets/images/home/cloud-b.svg" alt="" class="sky-cloud" style="--top:15%; --w:110px; --dur:150s; --delay:-110s">
+      <img src="assets/images/home/cloud-a.svg" alt="" class="sky-cloud" style="--top:27%; --w:130px; --dur:125s; --delay:-70s">
+      <img src="assets/images/home/cloud-b.svg" alt="" class="sky-cloud" style="--top:41%; --w:120px; --dur:140s; --delay:-20s">
+      <img src="assets/images/home/cloud-a.svg" alt="" class="sky-cloud" style="--top:55%; --w:140px; --dur:115s; --delay:-90s">
+      <img src="assets/images/home/cloud-b.svg" alt="" class="sky-cloud" style="--top:68%; --w:105px; --dur:160s; --delay:-50s">
+      <img src="assets/images/home/cloud-a.svg" alt="" class="sky-cloud" style="--top:80%; --w:135px; --dur:130s; --delay:-120s">
+      <img src="assets/images/home/cloud-b.svg" alt="" class="sky-cloud" style="--top:91%; --w:115px; --dur:145s; --delay:-10s">
+      <img src="assets/images/home/cloud-a.svg" alt="" class="sky-cloud" style="--top:12%; --w:125px; --dur:135s; --delay:-85s">
+      <img src="assets/images/home/cloud-b.svg" alt="" class="sky-cloud" style="--top:33%; --w:100px; --dur:155s; --delay:-40s">
+      <img src="assets/images/home/cloud-a.svg" alt="" class="sky-cloud" style="--top:48%; --w:145px; --dur:120s; --delay:-100s">
+      <img src="assets/images/home/cloud-b.svg" alt="" class="sky-cloud" style="--top:62%; --w:115px; --dur:148s; --delay:-65s">
+      <img src="assets/images/home/cloud-a.svg" alt="" class="sky-cloud" style="--top:75%; --w:128px; --dur:132s; --delay:-15s">
+    </div>
 
     <!-- Cabeçalho da Página -->
     <section class="page-header">
       <div class="container">
-        <span class="pixel-badge">Ceará Científico • Documentação Científica</span>
-        <h1 class="page-title">Metodologia & Pesquisa</h1>
+        <p class="hero-badge">Ceará Científico • Documentação Científica</p>
+        <h1 class="page-title">Metodologia &amp; Pesquisa</h1>
         <p class="page-subtitle">
           O rigor experimental, a arquitetura de software na Godot 4 e a validação empírica realizada em ambiente escolar público.
         </p>
+
+        <!-- Caixa de diálogo estilo jogo (clique para avançar) -->
+        <div class="dialog-box" id="guide-dialog">
+          <span class="dialog-avatar"><img src="assets/images/cat-avatar.png" alt=""></span>
+          <div class="dialog-body">
+            <span class="dialog-name">Gatinho guia</span>
+            <p class="dialog-text" id="guide-text" aria-hidden="true"></p>
+            <p class="sr-only">Olá! Aqui você descobre como o CiviCats foi criado. Foram quatro etapas: arte, programação, módulos e testes na escola. Explore as etapas abaixo e experimente os recursos de acessibilidade.</p>
+          </div>
+          <button type="button" class="dialog-next" id="guide-next" aria-label="Próxima fala do gatinho guia">&#9660;</button>
+        </div>
       </div>
     </section>
 
-    <!-- Resumo dos 4 Passos Metodológicos -->
-    <section class="section section-method-steps">
-      <div class="container">
-        
-        <div class="section-header reveal-item">
-          <h2 class="section-title">Fluxo Experimental</h2>
-          <p class="section-desc">Estrutura metodológica quanti-qualitativa aplicada durante o ciclo de vida do projeto.</p>
+    <div class="page-sections">
+
+      <!-- ================= 01. INTRODUÇÃO ================= -->
+      <section id="introducao" class="section">
+        <div class="container">
+          <div class="section-head reveal-item">
+            <span class="level-badge" aria-hidden="true">01</span>
+            <div>
+              <span class="eyebrow">Contextualização &amp; Problema</span>
+              <h2 class="section-title-left">Introdução</h2>
+            </div>
+          </div>
+
+          <div class="grid grid-2 intro-grid">
+            <article class="card intro-card reveal-item" data-delay="100">
+              <span class="intro-tag">O desafio</span>
+              <p>
+                A compreensão efetiva sobre mecanismos democráticos, direitos e deveres sociais ainda representa um desafio na formação básica de cidadãos, agravada pela carência de ferramentas educativas digitais acessíveis e interativas.
+              </p>
+            </article>
+            <article class="card intro-card intro-card--solution reveal-item" data-delay="200">
+              <span class="intro-tag">A proposta</span>
+              <p>
+                Diante desse cenário, o projeto <strong>CiviCats</strong> propõe o desenvolvimento de um jogo digital 2D voltado à simulação de processos democráticos e noções de cidadania para diferentes faixas etárias. Utilizando avatares felinos neutros e mecânicas lúdicas em pixel art, o software busca desmistificar conceitos cívicos fundamentais — desde regras de convivência social e ambiental na infância até sistemas de votação, plebiscitos e júri popular para jovens e adultos —, garantindo recursos práticos de acessibilidade digital.
+              </p>
+            </article>
+          </div>
         </div>
+      </section>
 
-        <div class="grid grid-4">
-          
-          <div class="card step-summary-card reveal-item" data-delay="100">
-            <span class="step-summary-badge">Etapa 01</span>
-            <div class="highlight-icon-box" aria-hidden="true">
-              <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
+      <!-- ================= 02. METODOLOGIA (MAPA DE ETAPAS) ================= -->
+      <section id="metodo" class="section">
+        <div class="container">
+          <div class="section-head reveal-item">
+            <span class="level-badge" aria-hidden="true">02</span>
+            <div>
+              <span class="eyebrow">Abordagem Quanti-Qualitativa &amp; Experimental</span>
+              <h2 class="section-title-left">Metodologia de Desenvolvimento</h2>
             </div>
-            <h3 class="step-summary-title">Arte & UI</h3>
-            <p class="step-summary-desc">Criação autoral em malha 32x32 no Aseprite com paletas acessíveis.</p>
           </div>
 
-          <div class="card step-summary-card reveal-item" data-delay="200">
-            <span class="step-summary-badge">Etapa 02</span>
-            <div class="highlight-icon-box" aria-hidden="true">
-              <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-            </div>
-            <h3 class="step-summary-title">Engenharia</h3>
-            <p class="step-summary-desc">Nós de controle, física e colisores implementados na Godot 4.</p>
-          </div>
+          <p class="section-lead reveal-item">
+            <strong>Fluxo Experimental.</strong> Estrutura metodológica quanti-qualitativa aplicada durante o ciclo de vida do projeto. A pesquisa adotou uma metodologia de base tecnológica, dividida em quatro etapas interdependentes e contínuas. Escolha uma etapa no mapa:
+          </p>
 
-          <div class="card step-summary-card reveal-item" data-delay="300">
-            <span class="step-summary-badge">Etapa 03</span>
-            <div class="highlight-icon-box" aria-hidden="true">
-              <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+          <div class="stage-map reveal-item" id="stage-map" style="--i:0">
+            <div class="stage-track" role="tablist" aria-label="Etapas da metodologia">
+              <span class="stage-path" aria-hidden="true"><span class="stage-path-fill"></span></span>
+              <img class="stage-marker" src="assets/images/cat-avatar.png" alt="" aria-hidden="true">
+        <button type="button" role="tab" id="stage-tab-0" class="stage-node is-active" aria-selected="true" aria-controls="stage-panel-0" tabindex="0">
+          <span class="stage-node-icon"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg></span>
+          <span class="stage-node-num">Etapa 01</span>
+          <span class="stage-node-label">Arte &amp; UI</span>
+        </button>
+        <button type="button" role="tab" id="stage-tab-1" class="stage-node" aria-selected="false" aria-controls="stage-panel-1" tabindex="-1">
+          <span class="stage-node-icon"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></span>
+          <span class="stage-node-num">Etapa 02</span>
+          <span class="stage-node-label">Engenharia</span>
+        </button>
+        <button type="button" role="tab" id="stage-tab-2" class="stage-node" aria-selected="false" aria-controls="stage-panel-2" tabindex="-1">
+          <span class="stage-node-icon"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M21 16V8l-9-5-9 5v8l9 5 9-5z"/><polyline points="3.3 7 12 12 20.7 7"/><line x1="12" y1="22" x2="12" y2="12"/></svg></span>
+          <span class="stage-node-num">Etapa 03</span>
+          <span class="stage-node-label">Modularidade</span>
+        </button>
+        <button type="button" role="tab" id="stage-tab-3" class="stage-node" aria-selected="false" aria-controls="stage-panel-3" tabindex="-1">
+          <span class="stage-node-icon"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></span>
+          <span class="stage-node-num">Etapa 04</span>
+          <span class="stage-node-label">Validação</span>
+        </button>
             </div>
-            <h3 class="step-summary-title">Modularidade</h3>
-            <p class="step-summary-desc">Divisão independente: Módulo Mirim e Módulo Democracia.</p>
-          </div>
 
-          <div class="card step-summary-card reveal-item" data-delay="400">
-            <span class="step-summary-badge">Etapa 04</span>
-            <div class="highlight-icon-box" aria-hidden="true">
-              <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-            </div>
-            <h3 class="step-summary-title">Validação</h3>
-            <p class="step-summary-desc">Testes de usabilidade e questionários na E.E.F. Senador Carlos Jereissati.</p>
-          </div>
-
+      <div class="stage-panel" role="tabpanel" id="stage-panel-0" aria-labelledby="stage-tab-0" tabindex="0">
+        <div class="stage-panel-head">
+          <span class="pill-tag stage-pill">Etapa 01 de 04</span>
+          <h3 class="stage-panel-title">Concepção Artística &amp; Interface</h3>
         </div>
-
+        <p class="stage-lead">Criação autoral em malha 32x32 no Aseprite com paletas acessíveis.</p>
+        <p class="stage-text">Criação autoral de todos os sprites, cenários em malha 32x32 pixels e interfaces gráficas construídas no software <strong>Aseprite</strong>. Foi priorizada uma paleta em tons pastéis acessíveis com testes de contraste visual de acordo com as diretrizes WCAG AA.</p>
+        <ul class="chip-list" aria-label="Palavras-chave da etapa"><li>Aseprite</li><li>Malha 32x32</li><li>Paleta pastel</li><li>Contraste WCAG AA</li></ul>
+        <div class="stage-nav"><span></span><button type="button" class="btn-pixel btn-pixel--sm" data-stage-step="1">Próxima &#9654;</button></div>
       </div>
-    </section>
+      <div class="stage-panel" role="tabpanel" id="stage-panel-1" aria-labelledby="stage-tab-1" tabindex="0" hidden>
+        <div class="stage-panel-head">
+          <span class="pill-tag stage-pill">Etapa 02 de 04</span>
+          <h3 class="stage-panel-title">Desenvolvimento &amp; Programação</h3>
+        </div>
+        <p class="stage-lead">Nós de controle, física e colisores implementados na Godot 4.</p>
+        <p class="stage-text">Implementação no motor <strong>Godot Engine 4</strong>, utilizando GDScript estruturado. A arquitetura fez uso intensivo de nós de interface (<em>Control</em>), colisores de eventos (<em>Area2D</em>) e manipulação dinâmica de camadas de mapa (<em>TileMapLayers</em>).</p>
+        <ul class="chip-list" aria-label="Palavras-chave da etapa"><li>Godot Engine 4</li><li>GDScript</li><li>Control</li><li>Area2D</li><li>TileMapLayers</li></ul>
+        <div class="stage-nav"><button type="button" class="btn-pixel btn-pixel--sm" data-stage-step="-1">&#9664; Anterior</button><button type="button" class="btn-pixel btn-pixel--sm" data-stage-step="1">Próxima &#9654;</button></div>
+      </div>
+      <div class="stage-panel" role="tabpanel" id="stage-panel-2" aria-labelledby="stage-tab-2" tabindex="0" hidden>
+        <div class="stage-panel-head">
+          <span class="pill-tag stage-pill">Etapa 03 de 04</span>
+          <h3 class="stage-panel-title">Arquitetura Modular</h3>
+        </div>
+        <p class="stage-lead">Divisão independente: Módulo Mirim e Módulo Democracia.</p>
+        <p class="stage-text">Segmentação da aplicação em dois eixos independentes: o <strong>Módulo Cidadão Mirim</strong> (focado em microcidadania e convívio escolar) e o <strong>Módulo Jovem</strong> (focado em processos institucionais, plebiscitos, júri simulado e eleições).</p>
+        <ul class="chip-list" aria-label="Palavras-chave da etapa"><li>Módulo Mirim</li><li>Módulo Democracia</li><li>Dois eixos independentes</li></ul>
+        <div class="stage-nav"><button type="button" class="btn-pixel btn-pixel--sm" data-stage-step="-1">&#9664; Anterior</button><button type="button" class="btn-pixel btn-pixel--sm" data-stage-step="1">Próxima &#9654;</button></div>
+      </div>
+      <div class="stage-panel" role="tabpanel" id="stage-panel-3" aria-labelledby="stage-tab-3" tabindex="0" hidden>
+        <div class="stage-panel-head">
+          <span class="pill-tag stage-pill">Etapa 04 de 04</span>
+          <h3 class="stage-panel-title">Validação de Campo</h3>
+        </div>
+        <p class="stage-lead">Testes de usabilidade e questionários na E.E.F. Senador Carlos Jereissati.</p>
+        <p class="stage-text">Aplicação prática de testes de usabilidade e coleta de dados através de questionários estruturados com estudantes do 4º ano do Ensino Fundamental na <strong>E.E.F. Senador Carlos Jereissati</strong>.</p>
+        <ul class="chip-list" aria-label="Palavras-chave da etapa"><li>Testes de usabilidade</li><li>Questionários estruturados</li><li>4º ano do Fundamental</li></ul>
+        <div class="stage-nav"><button type="button" class="btn-pixel btn-pixel--sm" data-stage-step="-1">&#9664; Anterior</button><a href="#acessibilidade" class="btn-pixel btn-pixel--sm btn-pixel--sun">Ver acessibilidade &#9654;</a></div>
+      </div>
+          </div>
+        </div>
+      </section>
 
-    <!-- Artigo Científico Estruturado -->
-    <section class="section section-paper-body">
-      <div class="container academic-container">
-        
-        <!-- 01. INTRODUÇÃO -->
-        <article class="paper-section-box reveal-item">
-          <div class="paper-section-header">
-            <span class="paper-tag-num">01</span>
+      <!-- ================= 03. ACESSIBILIDADE ================= -->
+      <section id="acessibilidade" class="section">
+        <div class="container">
+          <div class="section-head reveal-item">
+            <span class="level-badge" aria-hidden="true">03</span>
             <div>
-              <span class="paper-eyebrow">Contextualização & Problema</span>
-              <h2 class="paper-main-title">Introdução</h2>
+              <span class="eyebrow">Engenharia Inclusiva</span>
+              <h2 class="section-title-left">Recursos de Acessibilidade &amp; Inclusão</h2>
             </div>
           </div>
 
-          <div class="paper-text-content">
-            <p>
-              A compreensão efetiva sobre mecanismos democráticos, direitos e deveres sociais ainda representa um desafio na formação básica de cidadãos, agravada pela carência de ferramentas educativas digitais acessíveis e interativas.
-            </p>
-            <p>
-              Diante desse cenário, o projeto <strong>CiviCats</strong> propõe o desenvolvimento de um jogo digital 2D voltado à simulação de processos democráticos e noções de cidadania para diferentes faixas etárias. Utilizando avatares felinos neutros e mecânicas lúdicas em pixel art, o software busca desmistificar conceitos cívicos fundamentais — desde regras de convivência social e ambiental na infância até sistemas de votação, plebiscitos e júri popular para jovens e adultos —, garantindo recursos práticos de acessibilidade digital.
-            </p>
+          <p class="section-lead reveal-item">
+            Para assegurar que o aprendizado cívico seja universal e livre de barreiras cognitivas ou motoras, foram implementadas diretrizes essenciais de acessibilidade:
+          </p>
+
+          <div class="a11y-layout">
+            <ul class="a11y-grid">
+        <li class="a11y-card reveal-item" data-delay="100">
+          <span class="a11y-icon"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M19 5a10 10 0 0 1 0 14"/></svg></span>
+          <div>
+            <h3 class="a11y-title">Feedback Auditivo Padronizado</h3>
+            <p class="a11y-text">Respostas sonoras claras para ações de confirmação, avanço de diálogos, erros e sucesso nas decisões cívicas.</p>
           </div>
-        </article>
-
-        <!-- 02. METODOLOGIA DETALHADA -->
-        <article class="paper-section-box reveal-item">
-          <div class="paper-section-header">
-            <span class="paper-tag-num">02</span>
-            <div>
-              <span class="paper-eyebrow">Abordagem Quanti-Qualitativa & Experimental</span>
-              <h2 class="paper-main-title">Metodologia de Desenvolvimento</h2>
-            </div>
+        </li>
+        <li class="a11y-card reveal-item" data-delay="200">
+          <span class="a11y-icon"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M7 14h10"/></svg></span>
+          <div>
+            <h3 class="a11y-title">Navegação Facilitada por Atalhos</h3>
+            <p class="a11y-text">Menus e botões configurados para controle direto tanto via teclado/mouse no PC quanto por toques responsivos no Android.</p>
           </div>
-
-          <div class="paper-text-content">
-            <p>
-              A pesquisa adotou uma metodologia de base tecnológica, dividida em quatro etapas interdependentes e contínuas:
-            </p>
-
-            <div class="grid grid-2 sub-paper-grid">
-              
-              <div class="card sub-method-card">
-  <div class="sub-method-header">
-    <span class="sub-method-icon" aria-hidden="true">
-      <i class="fas fa-palette"></i>
-    </span>
-    <h3 class="sub-method-title">Concepção Artística & Interface</h3>
-  </div>
-  <p class="card-text">
-    Criação autoral de todos os sprites, cenários em malha 32x32 pixels e interfaces gráficas construídas no software <strong>Aseprite</strong>. Foi priorizada uma paleta em tons pastéis acessíveis com testes de contraste visual de acordo com as diretrizes WCAG AA.
-  </p>
-</div>
-
-<div class="card sub-method-card">
-  <div class="sub-method-header">
-    <span class="sub-method-icon" aria-hidden="true">
-      <i class="fas fa-code"></i>
-    </span>
-    <h3 class="sub-method-title">Desenvolvimento & Programação</h3>
-  </div>
-  <p class="card-text">
-    Implementação no motor <strong>Godot Engine 4</strong>, utilizando GDScript estruturado. A arquitetura fez uso intensivo de nós de interface (<em>Control</em>), colisores de eventos (<em>Area2D</em>) e manipulação dinâmica de camadas de mapa (<em>TileMapLayers</em>).
-  </p>
-</div>
-
-<div class="card sub-method-card">
-  <div class="sub-method-header">
-    <span class="sub-method-icon" aria-hidden="true">
-      <i class="fas fa-puzzle-piece"></i>
-    </span>
-    <h3 class="sub-method-title">Arquitetura Modular</h3>
-  </div>
-  <p class="card-text">
-    Segmentação da aplicação em dois eixos independentes: o <strong>Módulo Cidadão Mirim</strong> (focado em microcidadania e convívio escolar) e o <strong>Módulo Jovem</strong> (focado em processos institucionais, plebiscitos, júri simulado e eleições).
-  </p>
-</div>
-
-<div class="card sub-method-card">
-  <div class="sub-method-header">
-    <span class="sub-method-icon" aria-hidden="true">
-      <i class="fas fa-school"></i>
-    </span>
-    <h3 class="sub-method-title">Validação de Campo</h3>
-  </div>
-  <p class="card-text">
-    Aplicação prática de testes de usabilidade e coleta de dados através de questionários estruturados com estudantes do 4º ano do Ensino Fundamental na <strong>E.E.F. Senador Carlos Jereissati</strong>.
-  </p>
-</div>
+        </li>
+        <li class="a11y-card reveal-item" data-delay="300">
+          <span class="a11y-icon"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3v18" /><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"/></svg></span>
+          <div>
+            <h3 class="a11y-title">Contraste Visual e Tipografia Escalonada</h3>
+            <p class="a11y-text">Caixas de texto com fundo delimitado e fontes com proporções de leitura confortáveis para ambientes de sala de aula com iluminação variável.</p>
           </div>
-        </article>
-
-        <!-- 03. ACESSIBILIDADE & DESIGN INCLUSIVO -->
-        <article class="paper-section-box reveal-item">
-          <div class="paper-section-header">
-            <span class="paper-tag-num">03</span>
-            <div>
-              <span class="paper-eyebrow">Engenharia Inclusiva</span>
-              <h2 class="paper-main-title">Recursos de Acessibilidade & Inclusão</h2>
-            </div>
+        </li>
+        <li class="a11y-card reveal-item" data-delay="400">
+          <span class="a11y-icon"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M4 4l4 3h8l4-3v9a8 8 0 0 1-16 0z"/><path d="M9 12h.01M15 12h.01"/><path d="M10 16c1 .8 3 .8 4 0"/></svg></span>
+          <div>
+            <h3 class="a11y-title">Avatares Felinos Neutros</h3>
+            <p class="a11y-text">Uso de personagens felinos sem viés de gênero, etnia ou julgamento estético, gerando identificação imediata e acolhimento para qualquer criança ou jovem.</p>
           </div>
-
-          <div class="paper-text-content">
-            <p>
-              Para assegurar que o aprendizado cívico seja universal e livre de barreiras cognitivas ou motoras, foram implementadas diretrizes essenciais de acessibilidade:
-            </p>
-
-            <ul class="paper-check-list">
-              <li>
-                <strong>Feedback Auditivo Padronizado:</strong> Respostas sonoras claras para ações de confirmação, avanço de diálogos, erros e sucesso nas decisões cívicas.
-              </li>
-              <li>
-                <strong>Navegação Facilitada por Atalhos:</strong> Menus e botões configurados para controle direto tanto via teclado/mouse no PC quanto por toques responsivos no Android.
-              </li>
-              <li>
-                <strong>Contraste Visual e Tipografia Escalonada:</strong> Caixas de texto com fundo delimitado e fontes com proporções de leitura confortáveis para ambientes de sala de aula com iluminação variável.
-              </li>
-              <li>
-                <strong>Avatares Felinos Neutros:</strong> Uso de personagens felinos sem viés de gênero, etnia ou julgamento estético, gerando identificação imediata e acolhimento para qualquer criança ou jovem.
-              </li>
+        </li>
             </ul>
-          </div>
-        </article>
 
-        <!-- 04. RESULTADOS -->
-        <article class="paper-section-box reveal-item">
-          <div class="paper-section-header">
-            <span class="paper-tag-num">04</span>
+            <!-- Demonstração ilustrativa -->
+            <aside class="a11y-demo reveal-item" id="a11y-demo" aria-labelledby="demo-title" data-delay="200">
+              <h3 class="demo-title" id="demo-title">Teste você mesmo</h3>
+              <div class="demo-screen" id="demo-screen" data-size="normal" data-contrast="normal">
+                <div class="demo-dialog">
+                  <span class="dialog-avatar"><img src="assets/images/cat-avatar.png" alt=""></span>
+                  <p class="demo-text">Parabéns! Você esperou a sua vez na fila.</p>
+                </div>
+                <div class="demo-choices" aria-hidden="true">
+                  <span>Esperar</span><span>Furar</span>
+                </div>
+              </div>
+              <div class="demo-controls">
+                <button type="button" class="btn-pixel btn-pixel--sm" id="demo-size" aria-pressed="false">Texto maior</button>
+                <button type="button" class="btn-pixel btn-pixel--sm" id="demo-contrast" aria-pressed="false">Alto contraste</button>
+                <button type="button" class="btn-pixel btn-pixel--sm" id="demo-ok">&#9654; Som de acerto</button>
+                <button type="button" class="btn-pixel btn-pixel--sm" id="demo-err">&#9654; Som de erro</button>
+              </div>
+              <p class="demo-note">Simulação ilustrativa da ideia de cada recurso; os controles existem só nesta demonstração.</p>
+              <p class="sr-only" id="demo-status" role="status" aria-live="polite"></p>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= 04. RESULTADOS ================= -->
+      <section id="resultados" class="section">
+        <div class="container">
+          <div class="section-head reveal-item">
+            <span class="level-badge" aria-hidden="true">04</span>
             <div>
-              <span class="paper-eyebrow">Dados Coletados & Avaliação</span>
-              <h2 class="paper-main-title">Resultados Obtidos</h2>
+              <span class="eyebrow">Dados Coletados &amp; Avaliação</span>
+              <h2 class="section-title-left">Resultados Obtidos</h2>
             </div>
           </div>
 
-          <div class="paper-text-content">
-            <div class="grid grid-2">
-              
-              <div class="result-metric-card">
-                <span class="result-category-tag">Desempenho</span>
-                <h3 class="result-card-title">Funcionalidade do Software</h3>
-                <p class="result-card-desc">
-                  Execução estável em aplicação local autônoma (<em>standalone .exe</em> e <em>.apk</em>), viabilizando acesso pleno sem dependência de internet durante apresentações e no cotidiano escolar.
-                </p>
-              </div>
+          <p class="section-lead reveal-item">Toque em cada carta para virar e ver o resultado.</p>
 
-              <div class="result-metric-card">
-                <span class="result-category-tag">Engajamento</span>
-                <h3 class="result-card-title">Validação do Módulo Mirim</h3>
-                <p class="result-card-desc">
-                  Alto índice de envolvimento e participação voluntária entre os estudantes do 4º ano nos minigames de travessia segura, organização de fila e descarte na coleta seletiva.
-                </p>
-              </div>
-
-              <div class="result-metric-card">
-                <span class="result-category-tag">Pedagogia</span>
-                <h3 class="result-card-title">Fixação Conceitual</h3>
-                <p class="result-card-desc">
-                  A apuração dos questionários apontou excelente assimilação das regras de convivência ética e facilidade intuitiva na navegação por atalhos diretos na interface.
-                </p>
-              </div>
-
-              <div class="result-metric-card">
-                <span class="result-category-tag">Co-criação</span>
-                <h3 class="result-card-title">Design Participativo</h3>
-                <p class="result-card-desc">
-                  Incorporação contínua de melhorias visuais e ajustes de ritmo a partir do feedback verbal imediato dos alunos, consolidando o caráter colaborativo da ferramenta.
-                </p>
-              </div>
-
-            </div>
+          <div class="flip-grid">
+        <button type="button" class="flip-card reveal-item" data-delay="100" aria-pressed="false">
+          <span class="flip-inner">
+            <span class="flip-face flip-front">
+              <span class="pill-tag tag-blue">Desempenho</span>
+              <span class="flip-icon"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span>
+              <strong class="flip-title">Funcionalidade do Software</strong>
+              <span class="flip-hint">Toque para ver o resultado &#8635;</span>
+            </span>
+            <span class="flip-face flip-back">
+              <span class="flip-back-title">Funcionalidade do Software</span>
+              <span class="flip-back-text">Execução estável em aplicação local autônoma (<em>standalone .exe</em> e <em>.apk</em>), viabilizando acesso pleno sem dependência de internet durante apresentações e no cotidiano escolar.</span>
+              <span class="flip-hint">Toque para voltar &#8635;</span>
+            </span>
+          </span>
+        </button>
+        <button type="button" class="flip-card reveal-item" data-delay="200" aria-pressed="false">
+          <span class="flip-inner">
+            <span class="flip-face flip-front">
+              <span class="pill-tag tag-pink">Engajamento</span>
+              <span class="flip-icon"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+              <strong class="flip-title">Validação do Módulo Mirim</strong>
+              <span class="flip-hint">Toque para ver o resultado &#8635;</span>
+            </span>
+            <span class="flip-face flip-back">
+              <span class="flip-back-title">Validação do Módulo Mirim</span>
+              <span class="flip-back-text">Alto índice de envolvimento e participação voluntária entre os estudantes do 4º ano nos minigames de travessia segura, organização de fila e descarte na coleta seletiva.</span>
+              <span class="flip-hint">Toque para voltar &#8635;</span>
+            </span>
+          </span>
+        </button>
+        <button type="button" class="flip-card reveal-item" data-delay="300" aria-pressed="false">
+          <span class="flip-inner">
+            <span class="flip-face flip-front">
+              <span class="pill-tag tag-green">Pedagogia</span>
+              <span class="flip-icon"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></span>
+              <strong class="flip-title">Fixação Conceitual</strong>
+              <span class="flip-hint">Toque para ver o resultado &#8635;</span>
+            </span>
+            <span class="flip-face flip-back">
+              <span class="flip-back-title">Fixação Conceitual</span>
+              <span class="flip-back-text">A apuração dos questionários apontou excelente assimilação das regras de convivência ética e facilidade intuitiva na navegação por atalhos diretos na interface.</span>
+              <span class="flip-hint">Toque para voltar &#8635;</span>
+            </span>
+          </span>
+        </button>
+        <button type="button" class="flip-card reveal-item" data-delay="400" aria-pressed="false">
+          <span class="flip-inner">
+            <span class="flip-face flip-front">
+              <span class="pill-tag tag-sun">Co-criação</span>
+              <span class="flip-icon"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></span>
+              <strong class="flip-title">Design Participativo</strong>
+              <span class="flip-hint">Toque para ver o resultado &#8635;</span>
+            </span>
+            <span class="flip-face flip-back">
+              <span class="flip-back-title">Design Participativo</span>
+              <span class="flip-back-text">Incorporação contínua de melhorias visuais e ajustes de ritmo a partir do feedback verbal imediato dos alunos, consolidando o caráter colaborativo da ferramenta.</span>
+              <span class="flip-hint">Toque para voltar &#8635;</span>
+            </span>
+          </span>
+        </button>
           </div>
-        </article>
+        </div>
+      </section>
 
-        <!-- 05. CONSIDERAÇÕES FINAIS -->
-        <article class="paper-section-box paper-final-box reveal-item">
-          <div class="paper-section-header">
-            <span class="paper-tag-num">05</span>
+      <!-- ================= 05. CONSIDERAÇÕES FINAIS ================= -->
+      <section id="conclusao" class="section">
+        <div class="container">
+          <div class="section-head reveal-item">
+            <span class="level-badge" aria-hidden="true">05</span>
             <div>
-              <span class="paper-eyebrow">Conclusões da Pesquisa</span>
-              <h2 class="paper-main-title">Considerações Finais</h2>
+              <span class="eyebrow">Conclusões da Pesquisa</span>
+              <h2 class="section-title-left">Considerações Finais</h2>
             </div>
           </div>
 
-          <div class="paper-text-content">
+          <div class="final-panel wood-panel reveal-item">
             <p>
               O desenvolvimento do <strong>CiviCats</strong> demonstra a viabilidade do uso de motores de jogos e lógica de programação como instrumentos pedagógicos eficazes para o ensino cívico.
             </p>
             <p>
               A estrutura modular e a aplicação rigorosa de diretrizes de acessibilidade asseguram que o aprendizado democrático ocorra de maneira dinâmica, inclusiva e adaptada a diferentes realidades socioeducacionais. O projeto consolida-se como uma <strong>tecnologia social reprodutível</strong> para escolas da rede pública de ensino, integrando ciência da computação, design inclusivo e formação cidadã transformadora.
             </p>
+            <ul class="final-chips" aria-label="Eixos integrados pelo projeto">
+              <li>Ciência da computação</li><li>Design inclusivo</li><li>Formação cidadã</li>
+            </ul>
           </div>
-        </article>
+        </div>
+      </section>
 
-      </div>
-    </section>
+      <!-- Banner de Download -->
+      <section class="cta-banner reveal-item">
+        <div class="container cta-banner-container">
+          <h2 class="cta-banner-title">Conheça o CiviCats na Prática</h2>
+          <p class="cta-banner-desc">Baixe gratuitamente os arquivos executáveis para Windows ou Android e teste em sua escola.</p>
+          <a href="downloads.html" class="btn-pixel btn-pixel--sun btn-pixel--lg">Acessar Página de Downloads</a>
+        </div>
+      </section>
 
-    <!-- Banner de Download -->
-    <section class="cta-banner reveal-item">
-      <div class="container cta-banner-container">
-        <h2 class="cta-banner-title">Conheça o CiviCats na Prática</h2>
-        <p class="cta-banner-desc">Baixe gratuitamente os arquivos executáveis para Windows ou Android e teste em sua escola.</p>
-        <a href="downloads.html" class="btn btn-wood btn-lg">
-          Acessar Página de Downloads
-        </a>
-      </div>
-    </section>
-
+    </div>
   </main>
 
-  <!-- Rodapé Institucional -->
-  <footer class="footer">
-    <div class="container footer-grid">
-      <div class="footer-info">
-        <div class="brand">
-          <img src="assets/images/cat-avatar.png" alt="Ícone do Gatinho" class="brand-cat-icon">
-          <img src="assets/images/logo-civicats.png" alt="CiviCats" class="brand-logo-nav">
-        </div>
-        <p class="footer-desc">Projeto desenvolvido no âmbito do Ceará Científico para fomento do letramento democrático e tecnologia social pública.</p>
+  <!-- Rodapé: único lugar com grama (colinas, árvores e o gatinho pulando) -->
+  <footer class="site-footer">
+    <div class="meadow-wrap" aria-hidden="true">
+    <div class="meadow">
+      <img src="assets/images/home/hills.svg" alt="" class="meadow-hills">
+
+      <!-- Árvores (sprites enviados): uma dupla de cada lado da elevação -->
+      <img src="assets/images/home/tree-green.png" alt="" class="tree" style="--x:11;  --w:14; --b:13">
+      <img src="assets/images/home/tree-pink.png"  alt="" class="tree" style="--x:28;  --w:11; --b:17.5">
+      <img src="assets/images/home/tree-pink.png"  alt="" class="tree" style="--x:132; --w:11; --b:17.5">
+      <img src="assets/images/home/tree-green.png" alt="" class="tree" style="--x:149; --w:14; --b:13">
+
+      <img src="assets/images/home/tuft.svg" alt="" class="tuft" style="--x:52;  --w:5; --b:22">
+      <img src="assets/images/home/tuft.svg" alt="" class="tuft" style="--x:110; --w:4; --b:19">
+
+      <!-- Mascote sentado no topo da elevação (sprite do gatinho) -->
+      <img src="assets/images/home/cat-sit.png" alt="" class="meadow-cat">
+
+      <img src="assets/images/home/hills-front.svg" alt="" class="meadow-front">
+    </div>
       </div>
 
-      <div class="footer-links">
-        <h3 class="footer-heading">Navegação</h3>
+    <div class="footer-body">
+    <div class="site-footer-grid">
+      <div class="footer-col footer-about">
+        <a href="index.html" class="site-brand site-brand--light" aria-label="CiviCats - Página Inicial">
+          <img src="assets/images/cat-avatar.png" alt="" class="site-brand-icon" width="40" height="32">
+          <img src="assets/images/logo-civicats.png" alt="CiviCats" class="site-brand-logo" width="1349" height="424">
+        </a>
+        <p class="footer-text">Tecnologia social desenvolvida para o Ceará Científico voltada ao fortalecimento da cidadania e educação pública.</p>
+        <p class="footer-text footer-credits">Desenvolvido na <strong>Godot Engine 4</strong><br>Arte pixel art em <strong>Aseprite</strong></p>
+      </div>
+
+      <nav class="footer-col footer-nav" aria-label="Navegação do rodapé">
+        <h2 class="footer-heading">Navegação</h2>
         <ul>
           <li><a href="index.html">Início</a></li>
-          <li><a href="modulos.html">Os Módulos</a></li>
+          <li><a href="modulos.html">Módulos</a></li>
           <li><a href="metodologia.html">Metodologia</a></li>
-          <li><a href="sobre.html">Sobre & Contato</a></li>
+          <li><a href="sobre.html">Sobre &amp; Contato</a></li>
           <li><a href="downloads.html">Downloads</a></li>
         </ul>
-      </div>
+      </nav>
+    </div>
 
-      <div class="footer-legal">
-        <h3 class="footer-heading">Engenharia</h3>
-        <p>Desenvolvido na <strong>Godot Engine 4</strong></p>
-        <p>Arte Pixel Art em <strong>Aseprite</strong></p>
-        <p class="footer-copy">&copy; 2026 CiviCats. Todos os direitos reservados.</p>
-      </div>
+    <p class="footer-copy">&copy; 2026 CiviCats. Todos os direitos reservados.</p>
     </div>
   </footer>
 
   <script src="js/main.js"></script>
+  <script src="js/metodologia.js"></script>
 </body>
 </html>
