@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
   setupScrollReveal();
   setupParallaxHover();
   setupGameModal();
-  setupContactForm();
   detectUserOS();
   setupDownloadFeedback();
 });
@@ -168,60 +167,4 @@ function setupGameModal() {
       modal.close();
     }
   });
-}
-
-function setupContactForm() {
-  const form = document.getElementById('contact-form');
-  const successBanner = document.getElementById('form-success');
-  const submitBtn = document.getElementById('form-submit-btn');
-
-  if (!form) return;
-
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-
-    let isValid = true;
-    const requiredInputs = form.querySelectorAll('.form-input');
-
-    requiredInputs.forEach((input) => {
-      const parentGroup = input.closest('.form-group');
-
-      if (!input.value.trim()) {
-        parentGroup.classList.add('has-error');
-        isValid = false;
-      } else {
-        if (input.type === 'email' && !isValidEmail(input.value)) {
-          parentGroup.classList.add('has-error');
-          isValid = false;
-        } else {
-          parentGroup.classList.remove('has-error');
-        }
-      }
-
-      input.addEventListener('input', () => {
-        parentGroup.classList.remove('has-error');
-      });
-    });
-
-    if (isValid) {
-      const originalHTML = submitBtn.innerHTML;
-      submitBtn.innerHTML = '<span>Enviando mensagem...</span>';
-      submitBtn.style.pointerEvents = 'none';
-
-      setTimeout(() => {
-        form.reset();
-        submitBtn.innerHTML = originalHTML;
-        submitBtn.style.pointerEvents = 'auto';
-        successBanner.classList.add('is-active');
-
-        setTimeout(() => {
-          successBanner.classList.remove('is-active');
-        }, 6000);
-      }, 1200);
-    }
-  });
-}
-
-function isValidEmail(email) {
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }

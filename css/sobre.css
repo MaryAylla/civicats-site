@@ -1,0 +1,441 @@
+/* ==========================================================================
+   CiviCats - Sobre & Contato (tema pixel art)
+   ========================================================================== */
+
+body.page-sobre .section { padding-block: 2.5rem; }
+
+/* atalhos do topo */
+.quick-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-top: 1.6rem;
+}
+
+/* ---------- Equipe: cartas de personagem ---------- */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.team-card {
+  --accent: #3f8a45;
+  --accent-bg: #dcfce7;
+  --banner: #a6e38a;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0;
+  padding: 0;
+  text-align: left;
+  overflow: hidden;
+  background: var(--cream);
+  border: 4px solid var(--wood-dark);
+  border-radius: 10px;
+  box-shadow: inset 0 0 0 3px var(--cream-edge), 0 6px 0 var(--wood-shadow);
+  transition: transform 0.15s steps(3), box-shadow 0.15s steps(3);
+}
+
+.team-card:hover,
+.team-card:focus-within {
+  transform: translateY(-6px);
+  box-shadow: inset 0 0 0 3px var(--cream-edge), 0 12px 0 var(--wood-shadow);
+}
+
+.team-card--art   { --accent: #a24d69; --accent-bg: #ffe0e7; --banner: #f7b4c4; }
+.team-card--doc   { --accent: #2b6aa3; --accent-bg: #d6ecff; --banner: #9fcdf2; }
+.team-card--coord { --accent: #8a6410; --accent-bg: #fff0b8; --banner: #fbd869; }
+
+.team-banner {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  height: 96px;
+  background:
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.22) 0 12px, transparent 12px 24px),
+    var(--banner);
+  border-bottom: 4px solid var(--wood-dark);
+}
+
+.team-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 76px;
+  height: 76px;
+  margin-bottom: -38px;
+  color: var(--accent);
+  background: var(--cream);
+  border: 4px solid var(--wood-dark);
+  border-radius: 12px;
+  box-shadow: inset 0 0 0 3px var(--cream-edge), 0 4px 0 var(--wood-shadow);
+  transition: transform 0.15s steps(2);
+}
+
+.team-card:hover .team-avatar { animation: avatar-hop 0.5s steps(4); }
+
+@keyframes avatar-hop {
+  0%, 100% { transform: translateY(0); }
+  40%      { transform: translateY(-10px); }
+}
+
+.team-avatar .icon-svg { width: 38px; height: 38px; }
+
+.team-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  padding: 3rem 1.25rem 1.5rem;
+  text-align: center;
+}
+
+.team-role {
+  color: var(--accent);
+  background: var(--accent-bg);
+  border-color: var(--accent);
+}
+
+body.page-sobre .team-name {
+  margin: 0.7rem 0 0.4rem;
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 1.2;
+  color: #5d361d;
+}
+
+.team-handle {
+  display: inline-block;
+  margin-bottom: 0.9rem;
+  padding: 0.1rem 0.6rem;
+  font-family: var(--px-font);
+  font-weight: 600;
+  font-size: 1rem;
+  color: #5d361d;
+  text-decoration: none;
+  background: #ffffff;
+  border: 3px solid var(--wood);
+  border-radius: 6px;
+  transition: background 0.15s, color 0.15s;
+}
+
+.team-handle:hover { color: #ffffff; background: var(--wood); }
+.team-handle:focus-visible { outline: 3px solid var(--wood-dark); outline-offset: 3px; }
+
+body.page-sobre .team-desc {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #5a4636;
+}
+
+/* ---------- Missão ---------- */
+.mission-panel { max-width: 900px; margin-inline: auto; padding: 2.5rem 2.25rem; }
+
+.mission-tag {
+  margin-bottom: 0.9rem;
+  color: #5d361d;
+  background: #fbd869;
+  border-color: #7a4f12;
+}
+
+body.page-sobre .mission-title {
+  margin-bottom: 1rem;
+  font-weight: 700;
+  font-size: clamp(1.7rem, 3.4vw, 2.3rem);
+  line-height: 1.15;
+  color: #fff6e6;
+  text-shadow: 3px 3px 0 var(--wood-dark);
+}
+
+.mission-panel p {
+  margin-bottom: 1rem;
+  font-size: 1.08rem;
+  line-height: 1.7;
+  color: #fff6e6;
+}
+
+.mission-panel strong { color: #fbd869; }
+
+.mission-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 1.4rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.mission-chips li {
+  padding: 0.25rem 0.8rem;
+  font-family: var(--px-font);
+  font-weight: 700;
+  font-size: 1rem;
+  color: #5d361d;
+  background: #fbd869;
+  border: 3px solid #7a4f12;
+  border-radius: 6px;
+  box-shadow: 0 3px 0 #4d2f08;
+}
+
+/* ---------- Contato ---------- */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.contact-info {
+  padding: 2rem 1.75rem;
+  background:
+    repeating-linear-gradient(180deg, transparent 0 46px, rgba(77, 42, 19, 0.18) 46px 48px),
+    var(--wood);
+  border: 4px solid var(--wood-dark);
+  border-radius: 12px;
+  box-shadow: inset 0 0 0 4px var(--wood-light), 0 8px 0 var(--wood-shadow);
+  color: #fff6e6;
+}
+
+body.page-sobre .contact-title {
+  margin-bottom: 0.8rem;
+  font-weight: 700;
+  font-size: clamp(1.7rem, 3.2vw, 2.1rem);
+  line-height: 1.15;
+  color: #fff6e6;
+  text-shadow: 3px 3px 0 var(--wood-dark);
+}
+
+body.page-sobre .contact-desc {
+  margin-bottom: 1.5rem;
+  font-size: 1.02rem;
+  line-height: 1.65;
+  color: #ffe9cf;
+}
+
+.contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.contact-item { display: flex; gap: 0.9rem; align-items: flex-start; }
+
+.contact-icon {
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  color: #5d361d;
+  background: #ffe6a8;
+  border: 3px solid var(--wood-dark);
+  border-radius: 8px;
+}
+
+.contact-icon .icon-svg { width: 22px; height: 22px; }
+
+.contact-item strong {
+  display: block;
+  margin-bottom: 0.15rem;
+  font-family: var(--px-font);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #fbd869;
+}
+
+body.page-sobre .contact-item p { font-size: 0.97rem; line-height: 1.5; color: #fff6e6; }
+
+/* cartão do formulário */
+.contact-card {
+  padding: 2rem 1.75rem 1.75rem;
+  background: var(--cream);
+  border: 4px solid var(--wood-dark);
+  border-radius: 12px;
+  box-shadow: inset 0 0 0 3px var(--cream-edge), 0 8px 0 var(--wood-shadow);
+}
+
+body.page-sobre .form-title {
+  margin-bottom: 1.25rem;
+  font-weight: 700;
+  font-size: 1.6rem;
+  line-height: 1.2;
+  color: #5d361d;
+}
+
+.contact-form { display: flex; flex-direction: column; gap: 1.1rem; }
+
+.form-group { display: flex; flex-direction: column; gap: 0.35rem; }
+
+.form-label {
+  font-family: var(--px-font);
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: #5d361d;
+}
+
+body.page-sobre .form-input {
+  width: 100%;
+  padding: 0.7rem 0.85rem;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-size: 1rem;
+  color: #3a2a1c;
+  background: #ffffff;
+  border: 3px solid var(--wood-dark);
+  border-radius: 8px;
+  box-shadow: inset 0 3px 0 rgba(77, 42, 19, 0.12);
+  transition: border-color 0.15s, box-shadow 0.15s, background 0.15s;
+}
+
+body.page-sobre .form-input::placeholder { color: #a08a76; }
+
+body.page-sobre .form-input:hover { border-color: var(--wood); }
+
+body.page-sobre .form-input:focus {
+  outline: none;
+  background: #fffdf5;
+  border-color: #2b6aa3;
+  box-shadow: inset 0 3px 0 rgba(77, 42, 19, 0.08), 0 0 0 4px rgba(98, 191, 244, 0.55);
+}
+
+body.page-sobre .form-textarea { min-height: 130px; resize: vertical; }
+
+body.page-sobre .form-select {
+  appearance: none;
+  padding-right: 2.4rem;
+  background:
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 6' shape-rendering='crispEdges'><path d='M0 0h2v2h2v2h2V2h2V0h2v2H8v2H6v2H4V4H2V2H0z' fill='%234d2a13'/></svg>") no-repeat right 0.8rem center / 14px 9px,
+    #ffffff;
+}
+
+/* erros */
+.form-error-msg {
+  display: none;
+  font-family: var(--px-font);
+  font-weight: 600;
+  font-size: 0.95rem;
+  line-height: 1.3;
+  color: #b3261e;
+}
+
+.form-group.has-error .form-error-msg { display: block; }
+
+body.page-sobre .form-group.has-error .form-input {
+  border-color: #b3261e;
+  background: #fff3f1;
+}
+
+.form-foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.form-count {
+  margin-left: auto;
+  font-family: var(--px-font);
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #8d5b3d;
+}
+
+.form-count.is-near { color: #b3261e; }
+
+.hp-field {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* botão */
+.form-submit { width: 100%; margin-top: 0.4rem; }
+
+.form-submit:disabled { cursor: wait; filter: grayscale(0.25) brightness(0.95); transform: none; }
+
+.form-submit.is-sending .form-submit-label::after {
+  content: '';
+  display: inline-block;
+  width: 1.4em;
+  text-align: left;
+  animation: dots 1s steps(4) infinite;
+}
+
+@keyframes dots {
+  0%   { content: ''; }
+  25%  { content: '.'; }
+  50%  { content: '..'; }
+  75%  { content: '...'; }
+}
+
+/* avisos */
+.form-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.85rem 1rem;
+  font-family: var(--px-font);
+  font-weight: 600;
+  font-size: 1.05rem;
+  line-height: 1.4;
+  border: 4px solid;
+  border-radius: 8px;
+}
+
+.form-banner[hidden] { display: none; }
+
+.form-banner-icon {
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  line-height: 1;
+  color: #ffffff;
+  border-radius: 6px;
+}
+
+.form-banner--ok  { color: #14602f; background: #dcfce7; border-color: #3f8a45; }
+.form-banner--ok .form-banner-icon { background: #3f8a45; }
+.form-banner--err { color: #7a1a14; background: #ffe5e2; border-color: #b3261e; }
+.form-banner--err .form-banner-icon { background: #b3261e; }
+
+.form-banner:not([hidden]) { animation: banner-pop 0.3s steps(4); }
+
+@keyframes banner-pop {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+body.page-sobre .form-noscript { font-size: 0.9rem; color: #7a1a14; }
+
+/* ---------- Responsivo ---------- */
+@media (max-width: 1099px) {
+  .team-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 899px) {
+  .contact-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 599px) {
+  .team-grid { grid-template-columns: 1fr; gap: 1.25rem; }
+  .mission-panel { padding: 1.9rem 1.25rem; }
+  .contact-info, .contact-card { padding: 1.6rem 1.2rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .team-card:hover .team-avatar,
+  .form-banner:not([hidden]),
+  .form-submit.is-sending .form-submit-label::after { animation: none; }
+}

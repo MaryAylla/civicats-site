@@ -3,59 +3,57 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Conheça a equipe por trás do projeto CiviCats: desenvolvimento, arte, documentação e coordenação pedagógica para o Ceará Científico.">
+  <meta name="description" content="Conheça a equipe, a missão e o propósito do CiviCats, e fale com a gente para levar o jogo à sua escola.">
   <meta name="theme-color" content="#7ecbf7">
 
-  <title>CiviCats | Sobre Nós & Equipe</title>
+  <title>CiviCats | Sobre &amp; Contato</title>
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="assets/images/cat-avatar.png">
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
 
-  <!-- Google Fonts: Press Start 2P + Plus Jakarta Sans -->
+  <!-- Google Fonts: Pixelify Sans (visual pixel art) + Plus Jakarta Sans (textos longos) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Estilos -->
+  <!-- Estilos: base + tema novo (home.css) + camadas das páginas internas -->
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/inner.css">
+  <link rel="stylesheet" href="css/sobre.css">
 </head>
-<body>
-  <!-- Nuvens Flutuantes de Fundo -->
-  <div class="cloud-bg-layer" aria-hidden="true">
-    <div class="cloud-item cloud-1"></div>
-    <div class="cloud-item cloud-2"></div>
-  </div>
-
-  <!-- Acessibilidade -->
+<body class="home inner page-sobre">
+  <!-- Acessibilidade: Atalho de Teclado -->
   <a href="#conteudo-principal" class="skip-link">Pular para o conteúdo principal</a>
 
-  <!-- Cabeçalho -->
-  <header class="header">
-    <div class="container header-container">
-      <a href="index.html" class="brand" aria-label="CiviCats Página Inicial">
-        <img src="assets/images/cat-avatar.png" alt="Ícone do Gatinho CiviCats" class="brand-cat-icon">
-        <img src="assets/images/logo-civicats.png" alt="CiviCats" class="brand-logo-nav">
+  <header class="site-header">
+    <div class="site-header-bar">
+      <a href="index.html" class="site-brand" aria-label="CiviCats - Página Inicial">
+        <img src="assets/images/cat-avatar.png" alt="" class="site-brand-icon" width="40" height="32">
+        <img src="assets/images/logo-civicats.png" alt="CiviCats" class="site-brand-logo" width="1349" height="424">
       </a>
 
-      <button 
-        class="mobile-toggle" 
-        id="menu-toggle" 
-        aria-label="Abrir menu de navegação" 
-        aria-expanded="false" 
+      <!-- Botão Hamburguer Mobile -->
+      <button
+        class="menu-btn"
+        id="menu-toggle"
+        aria-label="Abrir menu de navegação"
+        aria-expanded="false"
         aria-controls="nav-menu"
       >
-        <span class="hamburger-bar"></span>
-        <span class="hamburger-bar"></span>
-        <span class="hamburger-bar"></span>
+        <span class="menu-bar"></span>
+        <span class="menu-bar"></span>
+        <span class="menu-bar"></span>
       </button>
 
-      <nav class="nav" id="nav-menu" aria-label="Navegação do site">
-        <ul class="nav-list">
-          <li><a href="index.html" class="nav-link">Início</a></li>
-          <li><a href="modulos.html" class="nav-link">Os Módulos</a></li>
-          <li><a href="metodologia.html" class="nav-link">Metodologia</a></li>
-          <li><a href="sobre.html" class="nav-link active" aria-current="page">Sobre & Contato</a></li>
-          <li><a href="downloads.html" class="btn btn-wood btn-nav-compact">Baixar</a></li>
+      <!-- Navegação Principal -->
+      <nav class="top-nav" id="nav-menu" aria-label="Navegação do site">
+        <ul class="top-nav-list">
+          <li><a href="index.html" class="top-nav-link">Início</a></li>
+          <li><a href="modulos.html" class="top-nav-link">Módulos</a></li>
+          <li><a href="metodologia.html" class="top-nav-link">Metodologia</a></li>
+          <li><a href="sobre.html" class="top-nav-link is-current" aria-current="page">Sobre &amp; Contato</a></li>
+          <li><a href="downloads.html" class="btn-pixel btn-pixel--sm">Baixar</a></li>
         </ul>
       </nav>
     </div>
@@ -63,125 +61,125 @@
 
   <main id="conteudo-principal">
 
+    <!-- Nuvens decorativas pelo céu da página inteira -->
+    <div class="page-sky" aria-hidden="true">
+      <img src="assets/images/home/cloud-a.svg" alt="" class="sky-cloud" style="--top:7%;  --w:150px; --dur:110s; --delay:-30s">
+      <img src="assets/images/home/cloud-b.svg" alt="" class="sky-cloud" style="--top:15%; --w:110px; --dur:150s; --delay:-110s">
+      <img src="assets/images/home/cloud-a.svg" alt="" class="sky-cloud" style="--top:27%; --w:130px; --dur:125s; --delay:-70s">
+      <img src="assets/images/home/cloud-b.svg" alt="" class="sky-cloud" style="--top:41%; --w:120px; --dur:140s; --delay:-20s">
+      <img src="assets/images/home/cloud-a.svg" alt="" class="sky-cloud" style="--top:55%; --w:140px; --dur:115s; --delay:-90s">
+      <img src="assets/images/home/cloud-b.svg" alt="" class="sky-cloud" style="--top:68%; --w:105px; --dur:160s; --delay:-50s">
+      <img src="assets/images/home/cloud-a.svg" alt="" class="sky-cloud" style="--top:80%; --w:135px; --dur:130s; --delay:-120s">
+      <img src="assets/images/home/cloud-b.svg" alt="" class="sky-cloud" style="--top:91%; --w:115px; --dur:145s; --delay:-10s">
+      <img src="assets/images/home/cloud-a.svg" alt="" class="sky-cloud" style="--top:12%; --w:125px; --dur:135s; --delay:-85s">
+      <img src="assets/images/home/cloud-b.svg" alt="" class="sky-cloud" style="--top:33%; --w:100px; --dur:155s; --delay:-40s">
+      <img src="assets/images/home/cloud-a.svg" alt="" class="sky-cloud" style="--top:48%; --w:145px; --dur:120s; --delay:-100s">
+      <img src="assets/images/home/cloud-b.svg" alt="" class="sky-cloud" style="--top:62%; --w:115px; --dur:148s; --delay:-65s">
+      <img src="assets/images/home/cloud-a.svg" alt="" class="sky-cloud" style="--top:75%; --w:128px; --dur:132s; --delay:-15s">
+    </div>
+
     <!-- Cabeçalho da Página -->
     <section class="page-header">
       <div class="container">
-        <span class="pixel-badge">Ceará Científico • Equipe do Projeto</span>
+        <p class="hero-badge">Ceará Científico • Equipe do Projeto</p>
         <h1 class="page-title">Sobre o Projeto CiviCats</h1>
         <p class="page-subtitle">
           Conheça as mentes por trás da engenharia de software, direção artística, pesquisa acadêmica e orientação pedagógica da iniciativa.
         </p>
+        <nav class="quick-links" aria-label="Atalhos desta página">
+          <a href="#equipe" class="btn-pixel btn-pixel--sm">Equipe</a>
+          <a href="#missao" class="btn-pixel btn-pixel--sm">Propósito</a>
+          <a href="#contato" class="btn-pixel btn-pixel--sm btn-pixel--sun">Fale conosco</a>
+        </nav>
       </div>
     </section>
 
-    <!-- Seção de Créditos & Equipe -->
-    <section class="section section-team">
-      <div class="container">
-        
-        <div class="section-header reveal-item">
-          <h2 class="section-title">Créditos Oficiais</h2>
-          <p class="section-desc">Trabalho colaborativo e interdisciplinar voltado à transformação da educação cívica pública.</p>
-        </div>
+    <div class="page-sections">
 
-        <div class="grid grid-team">
+      <!-- ================= EQUIPE ================= -->
+      <section id="equipe" class="section">
+        <div class="container">
+          <div class="section-head reveal-item">
+            <span class="level-badge" aria-hidden="true">&#9733;</span>
+            <div>
+              <span class="eyebrow">Trabalho colaborativo e interdisciplinar</span>
+              <h2 class="section-title-left">Créditos Oficiais</h2>
+            </div>
+          </div>
+          <p class="section-lead reveal-item">Trabalho colaborativo e interdisciplinar voltado à transformação da educação cívica pública.</p>
 
-          <!-- 1. Desenvolvimento -->
-          <article class="card team-card reveal-item" data-delay="100">
-            <div class="team-avatar-box">
-              <svg class="team-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <div class="team-grid">
+          <article class="team-card team-card--dev reveal-item" data-delay="100">
+            <div class="team-banner">
+              <span class="team-avatar"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true">
                 <polyline points="16 18 22 12 16 6"/>
                 <polyline points="8 6 2 12 8 18"/>
-              </svg>
+              </svg></span>
             </div>
-            <span class="team-role-tag">Desenvolvimento</span>
-            <h3 class="team-name">Maryanna Áylla</h3>
-            <p class="team-handle">
-              <a href="https://instagram.com/MaryAylla" target="_blank" rel="noopener noreferrer" class="social-tag">
-                @MaryAylla
-              </a>
-            </p>
-            <p class="team-desc">
-              Programação geral em GDScript na Godot Engine 4, arquitetura modular de minigames, lógica de colisões, física 2D e interface interativa.
-            </p>
+            <div class="team-body">
+              <span class="pill-tag team-role">Desenvolvimento</span>
+              <h3 class="team-name">Maryanna Áylla</h3>
+              <a href="https://instagram.com/MaryAylla" target="_blank" rel="noopener noreferrer" class="team-handle">@MaryAylla</a>
+              <p class="team-desc">Programação geral em GDScript na Godot Engine 4, arquitetura modular de minigames, lógica de colisões, física 2D e interface interativa.</p>
+            </div>
           </article>
-
-          <!-- 2. Pixel Art -->
-          <article class="card team-card reveal-item" data-delay="200">
-            <div class="team-avatar-box">
-              <svg class="team-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <article class="team-card team-card--art reveal-item" data-delay="200">
+            <div class="team-banner">
+              <span class="team-avatar"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true">
                 <circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/>
                 <circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/>
                 <circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/>
                 <circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/>
                 <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/>
-              </svg>
+              </svg></span>
             </div>
-            <span class="team-role-tag">Pixel Art</span>
-            <h3 class="team-name">Lumma Kyara</h3>
-            <p class="team-handle">
-              <a href="https://instagram.com/lumma.kk" target="_blank" rel="noopener noreferrer" class="social-tag">
-                @lumma.kk
-              </a>
-            </p>
-            <p class="team-desc">
-              Criação autoral de sprites, animações em malha 32x32, cenários urbanos no Aseprite e padronização da paleta acessível em tons pastéis.
-            </p>
+            <div class="team-body">
+              <span class="pill-tag team-role">Pixel Art</span>
+              <h3 class="team-name">Lumma Kyara</h3>
+              <a href="https://instagram.com/lumma.kk" target="_blank" rel="noopener noreferrer" class="team-handle">@lumma.kk</a>
+              <p class="team-desc">Criação autoral de sprites, animações em malha 32x32, cenários urbanos no Aseprite e padronização da paleta acessível em tons pastéis.</p>
+            </div>
           </article>
-
-          <!-- 3. Documentação -->
-          <article class="card team-card reveal-item" data-delay="300">
-            <div class="team-avatar-box">
-              <svg class="team-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <article class="team-card team-card--doc reveal-item" data-delay="300">
+            <div class="team-banner">
+              <span class="team-avatar"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true">
                 <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
                 <polyline points="14 2 14 8 20 8"/>
                 <line x1="16" y1="13" x2="8" y2="13"/>
                 <line x1="16" y1="17" x2="8" y2="17"/>
                 <polyline points="10 9 9 9 8 9"/>
-              </svg>
+              </svg></span>
             </div>
-            <span class="team-role-tag">Documentação</span>
-            <h3 class="team-name">Laiany S.</h3>
-            <p class="team-handle">
-              <a href="https://instagram.com/l.laianysampaiio" target="_blank" rel="noopener noreferrer" class="social-tag">
-                @l.laianysampaiio
-              </a>
-            </p>
-            <p class="team-desc">
-              Estruturação teórica da pesquisa científica, levantamento bibliográfico de letramento cívico e organização dos relatórios pedagógicos.
-            </p>
+            <div class="team-body">
+              <span class="pill-tag team-role">Documentação</span>
+              <h3 class="team-name">Laiany S.</h3>
+              <a href="https://instagram.com/l.laianysampaiio" target="_blank" rel="noopener noreferrer" class="team-handle">@l.laianysampaiio</a>
+              <p class="team-desc">Estruturação teórica da pesquisa científica, levantamento bibliográfico de letramento cívico e organização dos relatórios pedagógicos.</p>
+            </div>
           </article>
-
-          <!-- 4. Orientação -->
-          <article class="card team-card team-card-coord reveal-item" data-delay="400">
-            <div class="team-avatar-box avatar-coord">
-              <svg class="team-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <article class="team-card team-card--coord reveal-item" data-delay="400">
+            <div class="team-banner">
+              <span class="team-avatar"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true">
                 <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
                 <path d="M6 12v5c3 3 9 3 12 0v-5"/>
-              </svg>
+              </svg></span>
             </div>
-            <span class="team-role-tag tag-coord">Orientação</span>
-            <h3 class="team-name">Ana Verônica</h3>
-            <p class="team-handle">
-              <a href="https://instagram.com/anaveronicafc" target="_blank" rel="noopener noreferrer" class="social-tag">
-                @anaveronicafc
-              </a>
-            </p>
-            <p class="team-desc">
-              Supervisão metodológica, direcionamento pedagógico para validação nas escolas públicas e alinhamento às diretrizes do Ceará Científico.
-            </p>
+            <div class="team-body">
+              <span class="pill-tag team-role">Orientação</span>
+              <h3 class="team-name">Ana Verônica</h3>
+              <a href="https://instagram.com/anaveronicafc" target="_blank" rel="noopener noreferrer" class="team-handle">@anaveronicafc</a>
+              <p class="team-desc">Supervisão metodológica, direcionamento pedagógico para validação nas escolas públicas e alinhamento às diretrizes do Ceará Científico.</p>
+            </div>
           </article>
-
+          </div>
         </div>
+      </section>
 
-      </div>
-    </section>
-
-    <!-- Seção de Missão -->
-    <section class="section section-mission">
-      <div class="container">
-        <div class="mission-box reveal-item">
-          <div class="mission-content">
-            <span class="pixel-badge">Tecnologia Social Aberta</span>
+      <!-- ================= MISSÃO ================= -->
+      <section id="missao" class="section">
+        <div class="container">
+          <div class="mission-panel wood-panel reveal-item">
+            <span class="pill-tag mission-tag">Tecnologia Social Aberta</span>
             <h2 class="mission-title">O Propósito do CiviCats</h2>
             <p>
               Acreditamos que a educação cívica não deve ser restrita a conceitos abstratos ou materiais de difícil assimilação. O <strong>CiviCats</strong> nasceu com a missão de transformar o aprendizado democrático em uma experiência participativa, lúdica e acolhedora.
@@ -189,192 +187,200 @@
             <p>
               Desenvolvido como uma tecnologia educacional 100% gratuita, o projeto é voltado para aplicação direta em escolas da rede pública, proporcionando autonomia para que professores e estudantes debatam ética, convivência e instituições democráticas de forma prática.
             </p>
+            <ul class="mission-chips" aria-label="Princípios do projeto">
+              <li>Participativo</li><li>Lúdico</li><li>Acolhedor</li><li>100% gratuito</li>
+            </ul>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Seção de Contato & Feedback -->
-    <section class="section section-contact">
-      <div class="container">
-        
-        <div class="contact-grid">
-          
-          <!-- Informações de Contato -->
-          <div class="contact-info-panel reveal-item" data-delay="100">
-            <h2 class="contact-panel-title">Fale Conosco</h2>
-            <p class="contact-panel-desc">
-              Tem dúvidas pedagógicas, quer levar o CiviCats para a sua escola ou enviar sugestões para as próximas atualizações? Entre em contato com a equipe.
-            </p>
+      <!-- ================= CONTATO ================= -->
+      <section id="contato" class="section">
+        <div class="container">
+          <div class="contact-grid">
 
-            <div class="contact-detail-list">
-              <div class="contact-item">
-                <div class="contact-icon-box" aria-hidden="true">
-                  <svg class="contact-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <!-- Informações de Contato -->
+            <div class="contact-info reveal-item" data-delay="100">
+              <h2 class="contact-title">Fale Conosco</h2>
+              <p class="contact-desc">
+                Tem dúvidas pedagógicas, quer levar o CiviCats para a sua escola ou enviar sugestões para as próximas atualizações? Entre em contato com a equipe.
+              </p>
+              <ul class="contact-list">
+              <li class="contact-item">
+                <span class="contact-icon"><svg aria-hidden="true" class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square" stroke-linejoin="miter">
                     <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
                     <circle cx="12" cy="10" r="3"/>
-                  </svg>
-                </div>
+                  </svg></span>
                 <div>
                   <strong>Origem do Projeto:</strong>
                   <p>Iniciativa Escolar • Ceará Científico (Ceará, Brasil)</p>
                 </div>
-              </div>
-
-              <div class="contact-item">
-                <div class="contact-icon-box" aria-hidden="true">
-                  <svg class="contact-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              </li>
+              <li class="contact-item">
+                <span class="contact-icon"><svg aria-hidden="true" class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square" stroke-linejoin="miter">
                     <line x1="9" y1="18" x2="15" y2="18"/>
                     <line x1="10" y1="22" x2="14" y2="22"/>
                     <path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/>
-                  </svg>
-                </div>
+                  </svg></span>
                 <div>
                   <strong>Proposta de Uso:</strong>
                   <p>Aberto para feiras de ciências, laboratórios de informática e salas de aula.</p>
                 </div>
-              </div>
-
-              <div class="contact-item">
-                <div class="contact-icon-box" aria-hidden="true">
-                  <svg class="contact-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              </li>
+              <li class="contact-item">
+                <span class="contact-icon"><svg aria-hidden="true" class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square" stroke-linejoin="miter">
                     <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/>
                     <line x1="4" y1="22" x2="4" y2="15"/>
-                  </svg>
-                </div>
+                  </svg></span>
                 <div>
-                  <strong>Código & Distribuição:</strong>
+                  <strong>Código &amp; Distribuição:</strong>
                   <p>Software educativo livre e gratuito para fins pedagógicos.</p>
                 </div>
-              </div>
+              </li>
+              </ul>
             </div>
+
+            <!-- Formulário -->
+            <div class="contact-card reveal-item" data-delay="200">
+              <h3 class="form-title">Envie uma Mensagem</h3>
+
+              <!--
+                ENVIO REAL (Web3Forms): crie uma chave gratuita em https://web3forms.com
+                (informe o e-mail que vai RECEBER as mensagens) e cole-a em data-access-key.
+                A chave é pública por design; ela só permite enviar para o e-mail que a criou.
+              -->
+              <form id="contact-form" class="contact-form" novalidate
+                    data-endpoint="https://api.web3forms.com/submit"
+                    data-access-key="COLE_AQUI_A_SUA_CHAVE_DO_WEB3FORMS">
+
+                <div class="form-group">
+                  <label for="form-name" class="form-label">Seu Nome / Nome da Escola</label>
+                  <input type="text" id="form-name" name="name" class="form-input" autocomplete="name"
+                         placeholder="Ex: Prof. Maria / E.E.F. Modelo" maxlength="120" required
+                         aria-describedby="name-error">
+                  <span class="form-error-msg" id="name-error">Por favor, informe seu nome.</span>
+                </div>
+
+                <div class="form-group">
+                  <label for="form-email" class="form-label">E-mail para Contato</label>
+                  <input type="email" id="form-email" name="email" class="form-input" autocomplete="email"
+                         placeholder="seuemail@escola.edu.br" maxlength="160" required
+                         aria-describedby="email-error">
+                  <span class="form-error-msg" id="email-error">Por favor, insira um e-mail válido.</span>
+                </div>
+
+                <div class="form-group">
+                  <label for="form-subject" class="form-label">Assunto</label>
+                  <select id="form-subject" name="subject" class="form-input form-select" required aria-describedby="subject-error">
+                    <option value="" disabled selected>Selecione um assunto...</option>
+                    <option value="Uso Pedagógico em Sala de Aula">Uso Pedagógico em Sala de Aula</option>
+                    <option value="Dúvidas sobre os Minigames / Builds">Dúvidas sobre os Minigames / Builds</option>
+                    <option value="Feedback e Sugestões de Melhoria">Feedback e Sugestões de Melhoria</option>
+                    <option value="Apresentações em Feiras Científicas">Apresentações em Feiras Científicas</option>
+                  </select>
+                  <span class="form-error-msg" id="subject-error">Por favor, escolha um assunto.</span>
+                </div>
+
+                <div class="form-group">
+                  <label for="form-message" class="form-label">Mensagem</label>
+                  <textarea id="form-message" name="message" rows="5" class="form-input form-textarea"
+                            placeholder="Escreva sua mensagem ou relato sobre o jogo..." maxlength="1500" required
+                            aria-describedby="message-error message-count"></textarea>
+                  <div class="form-foot">
+                    <span class="form-error-msg" id="message-error">A mensagem não pode ficar vazia.</span>
+                    <span class="form-count" id="message-count" aria-live="off">0/1500</span>
+                  </div>
+                </div>
+
+                <!-- Campo isca contra robôs: pessoas não veem nem preenchem -->
+                <div class="hp-field" aria-hidden="true">
+                  <label>Não preencha este campo <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+                </div>
+
+                <button type="submit" class="btn-pixel btn-pixel--sun btn-pixel--lg form-submit" id="form-submit-btn">
+                  <span class="form-submit-label">Enviar Mensagem</span>
+                </button>
+
+                <div class="form-banner form-banner--ok" id="form-success" role="status" aria-live="polite" hidden>
+                  <span class="form-banner-icon" aria-hidden="true">&#10003;</span>
+                  <span>Mensagem enviada com sucesso! Agradecemos o contato.</span>
+                </div>
+
+                <div class="form-banner form-banner--err" id="form-error" role="alert" hidden>
+                  <span class="form-banner-icon" aria-hidden="true">!</span>
+                  <span id="form-error-text">Não foi possível enviar agora. Tente novamente em instantes.</span>
+                </div>
+
+                <noscript><p class="form-noscript">Ative o JavaScript para enviar a mensagem por este formulário.</p></noscript>
+              </form>
+            </div>
+
           </div>
-
-          <!-- Formulário Acessível -->
-          <div class="card contact-form-card reveal-item" data-delay="200">
-            <h3 class="form-title">Envie uma Mensagem</h3>
-            
-            <form id="contact-form" class="contact-form" novalidate>
-              
-              <div class="form-group">
-                <label for="form-name" class="form-label">Seu Nome / Nome da Escola</label>
-                <input 
-                  type="text" 
-                  id="form-name" 
-                  name="name" 
-                  class="form-input" 
-                  placeholder="Ex: Prof. Maria / E.E.F. Modelo" 
-                  required
-                >
-                <span class="form-error-msg" id="name-error">Por favor, informe seu nome.</span>
-              </div>
-
-              <div class="form-group">
-                <label for="form-email" class="form-label">E-mail para Contato</label>
-                <input 
-                  type="email" 
-                  id="form-email" 
-                  name="email" 
-                  class="form-input" 
-                  placeholder="seuemail@escola.edu.br" 
-                  required
-                >
-                <span class="form-error-msg" id="email-error">Por favor, insira um e-mail válido.</span>
-              </div>
-
-              <div class="form-group">
-                <label for="form-subject" class="form-label">Assunto</label>
-                <select id="form-subject" name="subject" class="form-input form-select" required>
-                  <option value="" disabled selected>Selecione um assunto...</option>
-                  <option value="pedagogico">Uso Pedagógico em Sala de Aula</option>
-                  <option value="duvidas">Dúvidas sobre os Minigames / Builds</option>
-                  <option value="feedback">Feedback e Sugestões de Melhoria</option>
-                  <option value="parcerias">Apresentações em Feiras Científicas</option>
-                </select>
-                <span class="form-error-msg" id="subject-error">Por favor, escolha um assunto.</span>
-              </div>
-
-              <div class="form-group">
-                <label for="form-message" class="form-label">Mensagem</label>
-                <textarea 
-                  id="form-message" 
-                  name="message" 
-                  rows="4" 
-                  class="form-input form-textarea" 
-                  placeholder="Escreva sua mensagem ou relato sobre o jogo..." 
-                  required
-                ></textarea>
-                <span class="form-error-msg" id="message-error">A mensagem não pode ficar vazia.</span>
-              </div>
-
-              <button type="submit" class="btn btn-wood btn-block" id="form-submit-btn">
-                <svg class="btn-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <line x1="22" y1="2" x2="11" y2="13"/>
-                  <polygon points="22 2 15 22 11 13 2 9 22 2"/>
-                </svg>
-                <span>Enviar Mensagem</span>
-              </button>
-
-              <div class="form-success-banner" id="form-success" role="alert" aria-live="polite">
-                <svg class="success-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-                  <polyline points="22 4 12 14.01 9 11.01"/>
-                </svg>
-                <span>Mensagem enviada com sucesso! Agradecemos o contato.</span>
-              </div>
-
-            </form>
-          </div>
-
         </div>
+      </section>
 
-      </div>
-    </section>
+      <!-- Banner de Download -->
+      <section class="cta-banner reveal-item">
+        <div class="container cta-banner-container">
+          <h2 class="cta-banner-title">Pronto para Testar o Jogo?</h2>
+          <p class="cta-banner-desc">Baixe a versão gratuita para Windows ou Android e jogue com seus alunos.</p>
+          <a href="downloads.html" class="btn-pixel btn-pixel--sun btn-pixel--lg">Acessar Downloads</a>
+        </div>
+      </section>
 
-    <!-- Banner de Download -->
-    <section class="cta-banner reveal-item">
-      <div class="container cta-banner-container">
-        <h2 class="cta-banner-title">Pronto para Testar o Jogo?</h2>
-        <p class="cta-banner-desc">Baixe a versão gratuita para Windows ou Android e jogue com seus alunos.</p>
-        <a href="downloads.html" class="btn btn-wood btn-lg">
-          Acessar Downloads
-        </a>
-      </div>
-    </section>
-
+    </div>
   </main>
 
-  <!-- Rodapé Institucional -->
-  <footer class="footer">
-    <div class="container footer-grid">
-      <div class="footer-info">
-        <div class="brand">
-          <img src="assets/images/cat-avatar.png" alt="Ícone do Gatinho" class="brand-cat-icon">
-          <img src="assets/images/logo-civicats.png" alt="CiviCats" class="brand-logo-nav">
-        </div>
-        <p class="footer-desc">Projeto desenvolvido no âmbito do Ceará Científico para fomento do letramento democrático e tecnologia social pública.</p>
+  <!-- Rodapé: único lugar com grama (colinas, árvores e o gatinho pulando) -->
+  <footer class="site-footer">
+    <div class="meadow-wrap" aria-hidden="true">
+    <div class="meadow">
+      <img src="assets/images/home/hills.svg" alt="" class="meadow-hills">
+
+      <!-- Árvores (sprites enviados): uma dupla de cada lado da elevação -->
+      <img src="assets/images/home/tree-green.png" alt="" class="tree" style="--x:11;  --w:14; --b:13">
+      <img src="assets/images/home/tree-pink.png"  alt="" class="tree" style="--x:28;  --w:11; --b:17.5">
+      <img src="assets/images/home/tree-pink.png"  alt="" class="tree" style="--x:132; --w:11; --b:17.5">
+      <img src="assets/images/home/tree-green.png" alt="" class="tree" style="--x:149; --w:14; --b:13">
+
+      <img src="assets/images/home/tuft.svg" alt="" class="tuft" style="--x:52;  --w:5; --b:22">
+      <img src="assets/images/home/tuft.svg" alt="" class="tuft" style="--x:110; --w:4; --b:19">
+
+      <!-- Mascote sentado no topo da elevação (sprite do gatinho) -->
+      <img src="assets/images/home/cat-sit.png" alt="" class="meadow-cat">
+
+      <img src="assets/images/home/hills-front.svg" alt="" class="meadow-front">
+    </div>
       </div>
 
-      <div class="footer-links">
-        <h3 class="footer-heading">Navegação</h3>
+    <div class="footer-body">
+    <div class="site-footer-grid">
+      <div class="footer-col footer-about">
+        <a href="index.html" class="site-brand site-brand--light" aria-label="CiviCats - Página Inicial">
+          <img src="assets/images/cat-avatar.png" alt="" class="site-brand-icon" width="40" height="32">
+          <img src="assets/images/logo-civicats.png" alt="CiviCats" class="site-brand-logo" width="1349" height="424">
+        </a>
+        <p class="footer-text">Tecnologia social desenvolvida para o Ceará Científico voltada ao fortalecimento da cidadania e educação pública.</p>
+        <p class="footer-text footer-credits">Desenvolvido na <strong>Godot Engine 4</strong><br>Arte pixel art em <strong>Aseprite</strong></p>
+      </div>
+
+      <nav class="footer-col footer-nav" aria-label="Navegação do rodapé">
+        <h2 class="footer-heading">Navegação</h2>
         <ul>
           <li><a href="index.html">Início</a></li>
-          <li><a href="modulos.html">Os Módulos</a></li>
+          <li><a href="modulos.html">Módulos</a></li>
           <li><a href="metodologia.html">Metodologia</a></li>
-          <li><a href="sobre.html">Sobre & Contato</a></li>
+          <li><a href="sobre.html">Sobre &amp; Contato</a></li>
           <li><a href="downloads.html">Downloads</a></li>
         </ul>
-      </div>
+      </nav>
+    </div>
 
-      <div class="footer-legal">
-        <h3 class="footer-heading">Engenharia</h3>
-        <p>Desenvolvido na <strong>Godot Engine 4</strong></p>
-        <p>Arte Pixel Art em <strong>Aseprite</strong></p>
-        <p class="footer-copy">&copy; 2026 CiviCats. Todos os direitos reservados.</p>
-      </div>
+    <p class="footer-copy">&copy; 2026 CiviCats. Todos os direitos reservados.</p>
     </div>
   </footer>
 
   <script src="js/main.js"></script>
+  <script src="js/sobre.js"></script>
 </body>
 </html>
