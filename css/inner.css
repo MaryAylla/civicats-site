@@ -1,0 +1,75 @@
+/* ==========================================================================
+   CiviCats - Camada das páginas internas (mesmo tema pixel art da Home)
+   Carregar DEPOIS de style.css e home.css. Usar com <body class="home inner ...">.
+   Reaproveita: navbar, footer com cenário, nuvens, botões e cards de home.css.
+   ========================================================================== */
+
+/* Títulos sempre na fonte pixel do tema (style.css força Press Start 2P) */
+body.inner h1,
+body.inner h2,
+body.inner h3 {
+  font-family: var(--px-font) !important;
+  letter-spacing: 0.3px;
+}
+
+/* ---------- Cabeçalho da página ---------- */
+.page-header {
+  position: relative;
+  z-index: 1;
+  padding: 6.75rem 0 1.25rem;          /* respiro abaixo das nuvens da navbar */
+  text-align: center;
+  background: radial-gradient(ellipse 60% 70% at 50% 55%, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0) 72%);
+}
+
+body.inner .page-title {
+  font-weight: 700;
+  font-size: clamp(2rem, 5.2vw, 3.1rem);
+  line-height: 1.15;
+  color: var(--ink);
+  text-shadow: 3px 3px 0 #ffffff;
+  margin-bottom: 1rem;
+  text-wrap: balance;
+}
+
+.page-subtitle {
+  max-width: 660px;
+  margin-inline: auto;
+  font-family: var(--px-font);
+  font-weight: 500;
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  line-height: 1.55;
+  color: var(--ink);
+}
+
+body.inner .section { padding-block: 2.75rem; }
+
+/* O style.css pinta as seções internas; aqui o céu continua por trás de tudo */
+body.inner .section-alt-bg,
+body.inner .section-progression {
+  background: transparent;
+  border: 0;
+}
+
+/* ---------- Tags de categoria (pílulas pixel) ---------- */
+.pill-tag {
+  display: inline-block;
+  padding: 0.2rem 0.85rem;
+  font-family: var(--px-font);
+  font-weight: 600;
+  font-size: 0.95rem;
+  line-height: 1.3;
+  border: 3px solid;
+  border-radius: 6px;
+}
+
+/* ---------- Painel "placa de madeira" reutilizável ---------- */
+.wood-panel {
+  padding: 2rem 1.5rem;
+  background:
+    repeating-linear-gradient(180deg, transparent 0 46px, rgba(77, 42, 19, 0.18) 46px 48px),
+    var(--wood);
+  border: 4px solid var(--wood-dark);
+  border-radius: 12px;
+  box-shadow: inset 0 0 0 4px var(--wood-light), 0 8px 0 var(--wood-shadow);
+  color: #fff6e6;
+}

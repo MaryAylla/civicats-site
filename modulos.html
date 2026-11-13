@@ -6,55 +6,54 @@
   <meta name="description" content="Conheça os 6 minigames do CiviCats: Módulo Mirim (microcidadania) e Módulo Democracia (processos institucionais).">
   <meta name="theme-color" content="#7ecbf7">
 
-  <title>CiviCats | Os Módulos & Minigames</title>
+  <title>CiviCats | Os Módulos &amp; Minigames</title>
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="assets/images/cat-avatar.png">
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
 
-  <!-- Google Fonts -->
+  <!-- Google Fonts: Pixelify Sans (visual pixel art) + Plus Jakarta Sans (textos longos) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
+  <!-- Estilos: base + tema novo (home.css) + camadas das páginas internas -->
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/inner.css">
+  <link rel="stylesheet" href="css/modulos.css">
 </head>
-<body>
-  <!-- Nuvens Flutuantes de Fundo -->
-  <div class="cloud-bg-layer" aria-hidden="true">
-    <div class="cloud-item cloud-1"></div>
-    <div class="cloud-item cloud-2"></div>
-  </div>
-
+<body class="home inner page-modulos">
   <!-- Acessibilidade -->
   <a href="#conteudo-principal" class="skip-link">Pular para o conteúdo principal</a>
 
-  <!-- Cabeçalho -->
-  <header class="header">
-    <div class="container header-container">
-      <a href="index.html" class="brand" aria-label="CiviCats Página Inicial">
-        <img src="assets/images/cat-avatar.png" alt="Ícone do Gatinho CiviCats" class="brand-cat-icon">
-        <img src="assets/images/logo-civicats.png" alt="CiviCats" class="brand-logo-nav">
+  <header class="site-header">
+    <div class="site-header-bar">
+      <a href="index.html" class="site-brand" aria-label="CiviCats - Página Inicial">
+        <img src="assets/images/cat-avatar.png" alt="" class="site-brand-icon" width="40" height="32">
+        <img src="assets/images/logo-civicats.png" alt="CiviCats" class="site-brand-logo" width="1349" height="424">
       </a>
 
-      <button 
-        class="mobile-toggle" 
-        id="menu-toggle" 
-        aria-label="Abrir menu de navegação" 
-        aria-expanded="false" 
+      <!-- Botão Hamburguer Mobile -->
+      <button
+        class="menu-btn"
+        id="menu-toggle"
+        aria-label="Abrir menu de navegação"
+        aria-expanded="false"
         aria-controls="nav-menu"
       >
-        <span class="hamburger-bar"></span>
-        <span class="hamburger-bar"></span>
-        <span class="hamburger-bar"></span>
+        <span class="menu-bar"></span>
+        <span class="menu-bar"></span>
+        <span class="menu-bar"></span>
       </button>
 
-      <nav class="nav" id="nav-menu" aria-label="Navegação do site">
-        <ul class="nav-list">
-          <li><a href="index.html" class="nav-link">Início</a></li>
-          <li><a href="modulos.html" class="nav-link active" aria-current="page">Os Módulos</a></li>
-          <li><a href="metodologia.html" class="nav-link">Metodologia</a></li>
-          <li><a href="sobre.html" class="nav-link">Sobre & Contato</a></li>
-          <li><a href="downloads.html" class="btn btn-wood btn-nav-compact">Baixar</a></li>
+      <!-- Navegação Principal -->
+      <nav class="top-nav" id="nav-menu" aria-label="Navegação do site">
+        <ul class="top-nav-list">
+          <li><a href="index.html" class="top-nav-link">Início</a></li>
+          <li><a href="modulos.html" class="top-nav-link is-current" aria-current="page">Módulos</a></li>
+          <li><a href="metodologia.html" class="top-nav-link">Metodologia</a></li>
+          <li><a href="sobre.html" class="top-nav-link">Sobre &amp; Contato</a></li>
+          <li><a href="downloads.html" class="btn-pixel btn-pixel--sm">Baixar</a></li>
         </ul>
       </nav>
     </div>
@@ -62,16 +61,35 @@
 
   <main id="conteudo-principal">
 
+    <!-- Nuvens decorativas pelo céu da página inteira -->
+    <div class="page-sky" aria-hidden="true">
+      <img src="assets/images/home/cloud-a.svg" alt="" class="sky-cloud" style="--top:7%;  --w:150px; --dur:110s; --delay:-30s">
+      <img src="assets/images/home/cloud-b.svg" alt="" class="sky-cloud" style="--top:15%; --w:110px; --dur:150s; --delay:-110s">
+      <img src="assets/images/home/cloud-a.svg" alt="" class="sky-cloud" style="--top:27%; --w:130px; --dur:125s; --delay:-70s">
+      <img src="assets/images/home/cloud-b.svg" alt="" class="sky-cloud" style="--top:41%; --w:120px; --dur:140s; --delay:-20s">
+      <img src="assets/images/home/cloud-a.svg" alt="" class="sky-cloud" style="--top:55%; --w:140px; --dur:115s; --delay:-90s">
+      <img src="assets/images/home/cloud-b.svg" alt="" class="sky-cloud" style="--top:68%; --w:105px; --dur:160s; --delay:-50s">
+      <img src="assets/images/home/cloud-a.svg" alt="" class="sky-cloud" style="--top:80%; --w:135px; --dur:130s; --delay:-120s">
+      <img src="assets/images/home/cloud-b.svg" alt="" class="sky-cloud" style="--top:91%; --w:115px; --dur:145s; --delay:-10s">
+      <img src="assets/images/home/cloud-a.svg" alt="" class="sky-cloud" style="--top:12%; --w:125px; --dur:135s; --delay:-85s">
+      <img src="assets/images/home/cloud-b.svg" alt="" class="sky-cloud" style="--top:33%; --w:100px; --dur:155s; --delay:-40s">
+      <img src="assets/images/home/cloud-a.svg" alt="" class="sky-cloud" style="--top:48%; --w:145px; --dur:120s; --delay:-100s">
+      <img src="assets/images/home/cloud-b.svg" alt="" class="sky-cloud" style="--top:62%; --w:115px; --dur:148s; --delay:-65s">
+      <img src="assets/images/home/cloud-a.svg" alt="" class="sky-cloud" style="--top:75%; --w:128px; --dur:132s; --delay:-15s">
+    </div>
+
     <!-- Cabeçalho da Página -->
     <section class="page-header">
       <div class="container">
-        <span class="pixel-badge">Arquitetura de Jogo • 2 Eixos Pedagógicos</span>
-        <h1 class="page-title">Módulos & Minigames</h1>
+        <p class="hero-badge">Arquitetura de Jogo • 2 Eixos Pedagógicos</p>
+        <h1 class="page-title">Módulos &amp; Minigames</h1>
         <p class="page-subtitle">
           Uma jornada de letramento cívico estruturada progressivamente: do respeito ao espaço compartilhado na infância à participação política ativa na juventude.
         </p>
       </div>
     </section>
+
+    <div class="page-sections">
 
     <!-- ================= SEÇÃO 1: MÓDULO MIRIM ================= -->
     <section id="mirim" class="section section-module-block">
@@ -103,7 +121,7 @@
                 data-title="Não Furar a Fila (Convivência Ética)"
                 data-desc="O jogador precisa respeitar a ordem de chegada na fila da merenda e entrada da escola, compreendendo que furar a vez prejudica o coletivo."
               >
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="zoom-icon"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square" class="zoom-icon" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
               </button>
             </div>
 
@@ -133,7 +151,7 @@
                 data-title="Atravessar na Faixa (Educação no Trânsito)"
                 data-desc="Ensina a aguardar o semáforo de pedestres e atravessar exclusivamente na faixa, pontuando que o trânsito seguro depende do respeito mútuo."
               >
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="zoom-icon"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="14" y2="11"/></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square" class="zoom-icon" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
               </button>
             </div>
 
@@ -163,7 +181,7 @@
                 data-title="Coleta Seletiva (Cuidado Ambiental)"
                 data-desc="Separação dinâmica de resíduos orgânicos, plásticos, metais e papéis nas lixeiras corretas, demonstrando o impacto do lixo no ecossistema urbano."
               >
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="zoom-icon"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="14" y2="11"/></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square" class="zoom-icon" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
               </button>
             </div>
 
@@ -182,7 +200,7 @@
     </section>
 
     <!-- ================= SEÇÃO 2: MÓDULO JOVEM / DEMOCRACIA ================= -->
-    <section id="jovem" class="section section-module-block section-alt-bg">
+    <section id="jovem" class="section section-module-block">
       <div class="container">
         
         <div class="module-section-banner reveal-item">
@@ -211,7 +229,7 @@
                 data-title="O Plebiscito (Democracia Direta)"
                 data-desc="O jogador vota em obras públicas comunitárias. O sistema de TileMapLayers da Godot 4 altera instantaneamente o mapa da cidade com base na decisão da maioria."
               >
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="zoom-icon"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="14" y2="11"/></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square" class="zoom-icon" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
               </button>
             </div>
 
@@ -241,7 +259,7 @@
                 data-title="Júri Simulado (Justiça e Argumentação)"
                 data-desc="Simulação de um julgamento popular onde o jogador analisa evidências, escuta testemunhas e pondera seu veredito com base na ética e nas leis."
               >
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="zoom-icon"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="14" y2="11"/></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square" class="zoom-icon" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
               </button>
             </div>
 
@@ -271,7 +289,7 @@
                 data-title="As Eleições (Voto e Representatividade)"
                 data-desc="Avaliação criteriosa de planos de governo de candidatos felinos, simulação da cabine de votação e compreensão do papel dos três poderes."
               >
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="zoom-icon"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="14" y2="11"/></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square" class="zoom-icon" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
               </button>
             </div>
 
@@ -306,7 +324,7 @@
             <p class="step-desc">O jogador aprende deveres cotidianos no Módulo Mirim: empatia, trânsito e meio ambiente.</p>
           </div>
 
-          <div class="progression-arrow" aria-hidden="true">➔</div>
+          <div class="progression-arrow" aria-hidden="true">▶</div>
 
           <div class="progression-step reveal-item" data-delay="200">
             <div class="step-num">02</div>
@@ -314,7 +332,7 @@
             <p class="step-desc">No Plebiscito e no Júri, descobre como o diálogo e a análise de dados afetam o município.</p>
           </div>
 
-          <div class="progression-arrow" aria-hidden="true">➔</div>
+          <div class="progression-arrow" aria-hidden="true">▶</div>
 
           <div class="progression-step reveal-item" data-delay="300">
             <div class="step-num">03</div>
@@ -332,12 +350,11 @@
       <div class="container cta-banner-container">
         <h2 class="cta-banner-title">Experimente os Minigames</h2>
         <p class="cta-banner-desc">Baixe a versão para Windows ou Android e jogue todos os módulos gratuitamente.</p>
-        <a href="downloads.html" class="btn btn-wood btn-lg">
-          Ir para Downloads
-        </a>
+        <a href="downloads.html" class="btn-pixel btn-pixel--sun btn-pixel--lg">Ir para Downloads</a>
       </div>
     </section>
 
+    </div>
   </main>
 
   <!-- ================= MODAL NATIVA ACESSÍVEL (<dialog>) ================= -->
@@ -360,34 +377,52 @@
     </div>
   </dialog>
 
-  <!-- Rodapé -->
-  <footer class="footer">
-    <div class="container footer-grid">
-      <div class="footer-info">
-        <div class="brand">
-          <img src="assets/images/cat-avatar.png" alt="Ícone do Gatinho" class="brand-cat-icon">
-          <img src="assets/images/logo-civicats.png" alt="CiviCats" class="brand-logo-nav">
-        </div>
-        <p class="footer-desc">Projeto desenvolvido no âmbito do Ceará Científico para fomento do letramento democrático e tecnologia social pública.</p>
+  <!-- Rodapé: único lugar com grama (colinas, árvores e o gatinho pulando) -->
+  <footer class="site-footer">
+    <div class="meadow-wrap" aria-hidden="true">
+    <div class="meadow">
+      <img src="assets/images/home/hills.svg" alt="" class="meadow-hills">
+
+      <!-- Árvores (sprites enviados): uma dupla de cada lado da elevação -->
+      <img src="assets/images/home/tree-green.png" alt="" class="tree" style="--x:11;  --w:14; --b:13">
+      <img src="assets/images/home/tree-pink.png"  alt="" class="tree" style="--x:28;  --w:11; --b:17.5">
+      <img src="assets/images/home/tree-pink.png"  alt="" class="tree" style="--x:132; --w:11; --b:17.5">
+      <img src="assets/images/home/tree-green.png" alt="" class="tree" style="--x:149; --w:14; --b:13">
+
+      <img src="assets/images/home/tuft.svg" alt="" class="tuft" style="--x:52;  --w:5; --b:22">
+      <img src="assets/images/home/tuft.svg" alt="" class="tuft" style="--x:110; --w:4; --b:19">
+
+      <!-- Mascote sentado no topo da elevação (sprite do gatinho) -->
+      <img src="assets/images/home/cat-sit.png" alt="" class="meadow-cat">
+
+      <img src="assets/images/home/hills-front.svg" alt="" class="meadow-front">
+    </div>
       </div>
 
-      <div class="footer-links">
-        <h3 class="footer-heading">Navegação</h3>
+    <div class="footer-body">
+    <div class="site-footer-grid">
+      <div class="footer-col footer-about">
+        <a href="index.html" class="site-brand site-brand--light" aria-label="CiviCats - Página Inicial">
+          <img src="assets/images/cat-avatar.png" alt="" class="site-brand-icon" width="40" height="32">
+          <img src="assets/images/logo-civicats.png" alt="CiviCats" class="site-brand-logo" width="1349" height="424">
+        </a>
+        <p class="footer-text">Tecnologia social desenvolvida para o Ceará Científico voltada ao fortalecimento da cidadania e educação pública.</p>
+        <p class="footer-text footer-credits">Desenvolvido na <strong>Godot Engine 4</strong><br>Arte pixel art em <strong>Aseprite</strong></p>
+      </div>
+
+      <nav class="footer-col footer-nav" aria-label="Navegação do rodapé">
+        <h2 class="footer-heading">Navegação</h2>
         <ul>
           <li><a href="index.html">Início</a></li>
-          <li><a href="modulos.html">Os Módulos</a></li>
+          <li><a href="modulos.html">Módulos</a></li>
           <li><a href="metodologia.html">Metodologia</a></li>
-          <li><a href="sobre.html">Sobre & Contato</a></li>
+          <li><a href="sobre.html">Sobre &amp; Contato</a></li>
           <li><a href="downloads.html">Downloads</a></li>
         </ul>
-      </div>
+      </nav>
+    </div>
 
-      <div class="footer-legal">
-        <h3 class="footer-heading">Engenharia</h3>
-        <p>Desenvolvido na <strong>Godot Engine 4</strong></p>
-        <p>Arte Pixel Art em <strong>Aseprite</strong></p>
-        <p class="footer-copy">&copy; 2026 CiviCats. Todos os direitos reservados.</p>
-      </div>
+    <p class="footer-copy">&copy; 2026 CiviCats. Todos os direitos reservados.</p>
     </div>
   </footer>
 

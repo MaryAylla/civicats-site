@@ -75,7 +75,7 @@ function setupMobileMenu() {
     );
   });
 
-  const navLinks = navMenu.querySelectorAll('.nav-link, .btn');
+  const navLinks = navMenu.querySelectorAll('.nav-link, .btn, .top-nav-link, .btn-pixel');
   navLinks.forEach((link) => {
     link.addEventListener('click', () => {
       navMenu.classList.remove('is-open');

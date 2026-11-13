@@ -139,16 +139,17 @@ body.home {
 
 .site-brand:hover .site-brand-icon { transform: rotate(-8deg) scale(1.08); }
 
-.site-brand-name {
-  font-family: var(--px-font);
-  font-weight: 700;
-  font-size: 1.75rem;
-  line-height: 1;
-  letter-spacing: 0.5px;
+.site-brand-logo {
+  height: 46px;
+  width: auto;
+  margin-left: -0.35rem;
+  image-rendering: pixelated;
+  display: block;
 }
 
+.site-footer .site-brand-logo { height: 60px; }
+
 .site-brand--light { color: #ffffff; }
-.site-brand--light .site-brand-name { text-shadow: 2px 2px 0 #1d4a2c; }
 
 .top-nav { position: relative; z-index: 2; }
 
@@ -193,7 +194,7 @@ body.home {
 @media (min-width: 760px) and (max-width: 999px) {
   .top-nav-list { gap: 1rem; }
   .top-nav-link { font-size: 0.95rem; }
-  .site-brand-name { font-size: 1.5rem; }
+  .site-brand-logo { height: 38px; }
   .btn-pixel--sm { font-size: 0.95rem; padding: 0.35rem 0.9rem; }
 }
 
@@ -641,7 +642,8 @@ body.home .footer-heading {
 }
 
 @media (max-width: 479px) {
-  .site-footer-grid { gap: 1.5rem 1.25rem; }
+  .site-footer-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 0.8fr); gap: 1.5rem 1rem; }
+  .site-footer .site-brand-logo { height: 46px; }
   .footer-text { font-size: 0.95rem; }
   body.home .footer-heading { font-size: 1.35rem; }
   .footer-nav a { font-size: 1.05rem; }
