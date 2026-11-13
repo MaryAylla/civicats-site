@@ -346,14 +346,15 @@ body.home .hero-title {
   --cell: calc(min(100vw, 960px) / 160);   /* 1 "pixel" do SVG das colinas */
   position: relative;
   z-index: 1;
-  margin-top: 0;
+  pointer-events: none;
+  margin-top: calc(var(--cell) * -24);   /* aproxima o cenário: o topo do SVG é só céu */
   /* estende o gramado para os lados em telas maiores que 960px */
   background: linear-gradient(
     to top,
-    #5aa84e 0, #5aa84e calc(var(--cell) * 14),
-    #6cbb55 calc(var(--cell) * 14), #6cbb55 calc(var(--cell) * 16),
-    #3f8a45 calc(var(--cell) * 16), #3f8a45 calc(var(--cell) * 17),
-    transparent calc(var(--cell) * 17)
+    #5aa84e 0, #5aa84e calc(var(--cell) * 12),
+    #6cbb55 calc(var(--cell) * 12), #6cbb55 calc(var(--cell) * 14),
+    #3f8a45 calc(var(--cell) * 14), #3f8a45 calc(var(--cell) * 15),
+    transparent calc(var(--cell) * 15)
   );
 }
 
@@ -394,16 +395,17 @@ body.home .hero-title {
 
 .meadow .meadow-cat {
   z-index: 3;
-  left: 55%;
-  bottom: 38%;
-  width: 14%;
-  animation: cat-jump 1.7s cubic-bezier(0.3, 0.7, 0.4, 1) infinite;
+  left: 43.5%;
+  bottom: 37%;
+  width: 13%;
+  transform-origin: 50% 100%;
+  animation: cat-idle 2.4s steps(1) infinite;
 }
 
-@keyframes cat-jump {
-  0%, 100% { transform: translateY(8%); }
-  42%      { transform: translateY(-40%); }
-  82%      { transform: translateY(8%); }
+/* respiração leve do gatinho sentado */
+@keyframes cat-idle {
+  0%, 100% { transform: translateY(0) scaleY(1); }
+  50%      { transform: translateY(0) scaleY(1.025); }
 }
 
 /* ==========================================================================
@@ -411,7 +413,7 @@ body.home .hero-title {
    ========================================================================== */
 /* Seções sobre o céu */
 .page-sections {
-  padding-bottom: 4rem;
+  padding-bottom: 2rem;
 }
 
 body.home .section-showcase { padding-top: 2.5rem; }
@@ -655,5 +657,4 @@ body.home .footer-heading {
 
   .sky-cloud:nth-child(odd)  { left: 8%; }
   .sky-cloud:nth-child(even) { left: 72%; }
-  .meadow .meadow-cat { transform: translateY(-8%); }
 }
