@@ -396,9 +396,9 @@ body.home .hero-title {
 
 .meadow .meadow-cat {
   z-index: 3;
-  left: 42%;
+  left: 42.5%;
   bottom: 36%;
-  width: 16%;
+  width: 14.5%;
   transform-origin: 50% 100%;
   animation: cat-idle 2.4s steps(1) infinite;
 }
