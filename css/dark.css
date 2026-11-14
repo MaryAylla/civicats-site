@@ -239,3 +239,23 @@ html[data-theme="dark"] .footer-body { background: linear-gradient(180deg, #2d54
 /* Ícones dos destaques */
 html[data-theme="dark"] body.home .highlight-icon-box { background: #46374f; border-color: #170a03; color: #ffe1bf; }
 html[data-theme="dark"] body.home .card:hover .highlight-icon-box { background: #6b4430; color: #fff; }
+
+/* ---------- Sombras brancas dos textos sobre o céu: viram sombras escuras ---------- */
+html[data-theme="dark"] body.home .section-title,
+html[data-theme="dark"] body.home .cta-banner-title,
+html[data-theme="dark"] body.inner .page-title,
+html[data-theme="dark"] body.inner .section-title-left,
+html[data-theme="dark"] body.page-modulos .module-group-title,
+html[data-theme="dark"] .stage-node-label,
+html[data-theme="dark"] body.page-modulos .progression-arrow { text-shadow: 3px 3px 0 #070d22; }
+html[data-theme="dark"] body.home .section-desc,
+html[data-theme="dark"] body.page-modulos .section-desc { text-shadow: 2px 2px 0 #070d22; color: #eaf1ff; }
+html[data-theme="dark"] .stage-node-label { text-shadow: 2px 2px 0 #070d22; }
+html[data-theme="dark"] body.page-modulos .progression-arrow { color: #d5b695; }
+
+/* ---------- Janela de zoom dos minigames ---------- */
+html[data-theme="dark"] body.page-modulos .modal-box { background: #2a2030; border-color: #170a03; box-shadow: inset 0 0 0 3px #46374f, 0 10px 0 #170a03; }
+html[data-theme="dark"] body.page-modulos .modal-header { background: #46374f; border-bottom-color: #170a03; }
+html[data-theme="dark"] body.page-modulos .modal-title { color: #ffe1bf; }
+html[data-theme="dark"] body.page-modulos .modal-desc { color: #e6d8c6; }
+html[data-theme="dark"] body.page-modulos .modal-body { background: transparent; }

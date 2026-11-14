@@ -7,14 +7,11 @@
   <meta name="theme-color" content="#7ecbf7">
 
   <script>
-    /* Define o tema antes da pintura (evita piscar): escolha salva ou preferência do sistema */
+    /* Tema: sempre claro, a menos que a pessoa tenha escolhido o modo escuro pelo botão */
     (function () {
       var t = null;
       try { t = localStorage.getItem('civicats-theme'); } catch (e) {}
-      if (t !== 'dark' && t !== 'light') {
-        t = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-      }
-      document.documentElement.setAttribute('data-theme', t);
+      document.documentElement.setAttribute('data-theme', t === 'dark' ? 'dark' : 'light');
     })();
   </script>
 
