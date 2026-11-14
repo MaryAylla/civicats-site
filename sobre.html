@@ -6,6 +6,18 @@
   <meta name="description" content="Conheça a equipe, a missão e o propósito do CiviCats, e fale com a gente para levar o jogo à sua escola.">
   <meta name="theme-color" content="#7ecbf7">
 
+  <script>
+    /* Define o tema antes da pintura (evita piscar): escolha salva ou preferência do sistema */
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem('civicats-theme'); } catch (e) {}
+      if (t !== 'dark' && t !== 'light') {
+        t = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+
   <title>CiviCats | Sobre &amp; Contato</title>
 
   <!-- Favicon -->
@@ -21,6 +33,7 @@
   <link rel="stylesheet" href="css/home.css">
   <link rel="stylesheet" href="css/inner.css">
   <link rel="stylesheet" href="css/sobre.css">
+  <link rel="stylesheet" href="css/dark.css">
 </head>
 <body class="home inner page-sobre">
   <!-- Acessibilidade: Atalho de Teclado -->
@@ -54,6 +67,7 @@
           <li><a href="metodologia.html" class="top-nav-link">Metodologia</a></li>
           <li><a href="sobre.html" class="top-nav-link is-current" aria-current="page">Sobre &amp; Contato</a></li>
           <li><a href="downloads.html" class="btn-pixel btn-pixel--sm">Baixar</a></li>
+          <li><button type="button" class="theme-toggle" aria-pressed="false" aria-label="Ativar modo escuro" title="Modo escuro"><span class="theme-icon" aria-hidden="true"></span></button></li>
         </ul>
       </nav>
     </div>
@@ -381,6 +395,7 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script src="js/theme.js"></script>
   <script src="js/sobre.js"></script>
 </body>
 </html>

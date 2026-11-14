@@ -6,6 +6,18 @@
   <meta name="description" content="Fundamentação teórica, metodologia, acessibilidade, resultados de campo e validação científica do projeto CiviCats para o Ceará Científico.">
   <meta name="theme-color" content="#7ecbf7">
 
+  <script>
+    /* Define o tema antes da pintura (evita piscar): escolha salva ou preferência do sistema */
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem('civicats-theme'); } catch (e) {}
+      if (t !== 'dark' && t !== 'light') {
+        t = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+
   <title>CiviCats | Metodologia &amp; Pesquisa Científica</title>
 
   <!-- Favicon -->
@@ -21,6 +33,7 @@
   <link rel="stylesheet" href="css/home.css">
   <link rel="stylesheet" href="css/inner.css">
   <link rel="stylesheet" href="css/metodologia.css">
+  <link rel="stylesheet" href="css/dark.css">
 </head>
 <body class="home inner page-metodologia">
   <!-- Acessibilidade: Atalho de Teclado -->
@@ -54,6 +67,7 @@
           <li><a href="metodologia.html" class="top-nav-link is-current" aria-current="page">Metodologia</a></li>
           <li><a href="sobre.html" class="top-nav-link">Sobre &amp; Contato</a></li>
           <li><a href="downloads.html" class="btn-pixel btn-pixel--sm">Baixar</a></li>
+          <li><button type="button" class="theme-toggle" aria-pressed="false" aria-label="Ativar modo escuro" title="Modo escuro"><span class="theme-icon" aria-hidden="true"></span></button></li>
         </ul>
       </nav>
     </div>
@@ -463,6 +477,7 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script src="js/theme.js"></script>
   <script src="js/metodologia.js"></script>
 </body>
 </html>

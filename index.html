@@ -6,6 +6,18 @@
   <meta name="description" content="CiviCats - Jogo digital educativo em 2D voltado à simulação de processos democráticos e letramento cívico lúdico.">
   <meta name="theme-color" content="#7ecbf7">
 
+  <script>
+    /* Define o tema antes da pintura (evita piscar): escolha salva ou preferência do sistema */
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem('civicats-theme'); } catch (e) {}
+      if (t !== 'dark' && t !== 'light') {
+        t = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+
   <title>CiviCats | Início - Letramento Cívico Lúdico</title>
 
   <!-- Favicon -->
@@ -19,6 +31,7 @@
   <!-- Estilos: base do site + camada exclusiva da nova Home -->
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/dark.css">
 </head>
 <body class="home">
   <!-- Acessibilidade: Atalho de Teclado -->
@@ -53,6 +66,7 @@
           <li><a href="metodologia.html" class="top-nav-link">Metodologia</a></li>
           <li><a href="sobre.html" class="top-nav-link">Sobre &amp; Contato</a></li>
           <li><a href="downloads.html" class="btn-pixel btn-pixel--sm">Baixar</a></li>
+          <li><button type="button" class="theme-toggle" aria-pressed="false" aria-label="Ativar modo escuro" title="Modo escuro"><span class="theme-icon" aria-hidden="true"></span></button></li>
         </ul>
       </nav>
     </div>
@@ -303,5 +317,6 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script src="js/theme.js"></script>
 </body>
 </html>

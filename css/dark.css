@@ -1,0 +1,241 @@
+/* ==========================================================================
+   CiviCats - Modo escuro (noite estrelada). Carregar por último.
+   Ativado por <html data-theme="dark"> (js/theme.js + script no <head>).
+   ========================================================================== */
+
+/* ---------- Botão do tema (sempre disponível) ---------- */
+.theme-toggle {
+  width: 42px;
+  height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background: #fff8ec;
+  border: 3px solid var(--wood-dark, #4d2a13);
+  border-radius: 8px;
+  box-shadow: inset 0 0 0 2px #f2dcc0, 0 3px 0 var(--wood-shadow, #2e1608);
+  cursor: pointer;
+  transition: transform 0.12s steps(2), box-shadow 0.12s steps(2);
+}
+.theme-toggle:hover { transform: translateY(-1px); }
+.theme-toggle:active { transform: translateY(2px); box-shadow: inset 0 0 0 2px #f2dcc0, 0 1px 0 var(--wood-shadow, #2e1608); }
+.theme-toggle:focus-visible { outline: 3px solid #2589cc; outline-offset: 3px; }
+
+/* Ícone pixel: sol (claro) / lua (escuro) desenhados com box-shadow */
+.theme-icon {
+  --p: 3px;
+  display: block;
+  width: var(--p);
+  height: var(--p);
+  background: transparent;
+  image-rendering: pixelated;
+  transform: translate(-1.5px, -1.5px);
+}
+/* sol 7x7 */
+.theme-icon {
+  color: #f4a817;
+  box-shadow:
+    calc(var(--p)*3) calc(var(--p)*-3) 0 0 currentColor,
+    calc(var(--p)*-3) 0 0 0 currentColor, calc(var(--p)*3) 0 0 0 currentColor,
+    0 calc(var(--p)*-3) 0 0 currentColor, 0 calc(var(--p)*3) 0 0 currentColor,
+    calc(var(--p)*-1) calc(var(--p)*-1) 0 0 currentColor, 0 calc(var(--p)*-1) 0 0 currentColor, var(--p) calc(var(--p)*-1) 0 0 currentColor,
+    calc(var(--p)*-1) 0 0 0 currentColor, var(--p) 0 0 0 currentColor, 0 0 0 0 currentColor,
+    calc(var(--p)*-1) var(--p) 0 0 currentColor, 0 var(--p) 0 0 currentColor, var(--p) var(--p) 0 0 currentColor,
+    calc(var(--p)*-2) calc(var(--p)*-2) 0 0 currentColor, calc(var(--p)*2) calc(var(--p)*-2) 0 0 currentColor,
+    calc(var(--p)*-2) calc(var(--p)*2) 0 0 currentColor, calc(var(--p)*2) calc(var(--p)*2) 0 0 currentColor;
+}
+
+/* ==========================================================================
+   MODO ESCURO
+   ========================================================================== */
+html[data-theme="dark"] { color-scheme: dark; }
+
+html[data-theme="dark"] body.home {
+  --ink: #e9f0ff;
+  --cream: #2a2030;
+  --cream-edge: #46374f;
+  background-color: #3a5594;   /* mesma cor do fim do céu: o rodapé continua o céu */
+}
+
+/* Lua no botão */
+html[data-theme="dark"] .theme-toggle { background: #1c2850; box-shadow: inset 0 0 0 2px #34437a, 0 3px 0 var(--wood-shadow, #2e1608); }
+html[data-theme="dark"] .theme-icon {
+  color: #ffe38a;
+  box-shadow:
+    0 calc(var(--p)*-3) 0 0 currentColor, var(--p) calc(var(--p)*-3) 0 0 currentColor,
+    calc(var(--p)*-1) calc(var(--p)*-2) 0 0 currentColor, 0 calc(var(--p)*-2) 0 0 currentColor,
+    calc(var(--p)*-2) calc(var(--p)*-1) 0 0 currentColor, calc(var(--p)*-1) calc(var(--p)*-1) 0 0 currentColor,
+    calc(var(--p)*-3) 0 0 0 currentColor, calc(var(--p)*-2) 0 0 0 currentColor, calc(var(--p)*-1) 0 0 0 currentColor,
+    calc(var(--p)*-3) var(--p) 0 0 currentColor, calc(var(--p)*-2) var(--p) 0 0 currentColor, calc(var(--p)*-1) var(--p) 0 0 currentColor,
+    calc(var(--p)*-3) calc(var(--p)*2) 0 0 currentColor, calc(var(--p)*-2) calc(var(--p)*2) 0 0 currentColor, calc(var(--p)*-1) calc(var(--p)*2) 0 0 currentColor, 0 calc(var(--p)*2) 0 0 currentColor,
+    calc(var(--p)*-2) calc(var(--p)*3) 0 0 currentColor, calc(var(--p)*-1) calc(var(--p)*3) 0 0 currentColor, 0 calc(var(--p)*3) 0 0 currentColor, var(--p) calc(var(--p)*3) 0 0 currentColor;
+}
+
+/* ---------- Céu noturno ---------- */
+html[data-theme="dark"] main {
+  background: linear-gradient(180deg, #0a1230 0%, #14235a 30%, #23397a 65%, #3a5594 100%);
+}
+
+/* estrelinhas pixel espalhadas pelo céu */
+html[data-theme="dark"] .page-sky::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(#fff 1px, transparent 1.5px),
+    radial-gradient(#cfe0ff 1px, transparent 1.5px),
+    radial-gradient(#ffe9a8 1.5px, transparent 2px);
+  background-size: 190px 170px, 260px 230px, 340px 310px;
+  background-position: 20px 30px, 110px 90px, 60px 150px;
+  opacity: 0.85;
+}
+html[data-theme="dark"] .sky-cloud { filter: brightness(0.38) saturate(0.8); opacity: 0.8; }
+
+/* ---------- Navbar ---------- */
+html[data-theme="dark"] .site-header { background: #121c3d; }
+html[data-theme="dark"] .site-header::after { filter: brightness(0.3) saturate(1.3); }
+html[data-theme="dark"] .top-nav-link { color: #e9f0ff; }
+html[data-theme="dark"] .menu-bar { background: #e9f0ff; }
+html[data-theme="dark"] .site-brand-logo { filter: none; }
+@media (max-width: 759px) {
+  html[data-theme="dark"] .top-nav { background: #121c3d; }
+}
+
+/* ---------- Títulos e textos soltos sobre o céu ---------- */
+html[data-theme="dark"] body.inner .page-title,
+html[data-theme="dark"] body.inner .section-title-left,
+html[data-theme="dark"] body.home .section-title,
+html[data-theme="dark"] body.home h1,
+html[data-theme="dark"] body.home h2 {
+  text-shadow: 3px 3px 0 #070d22;
+}
+html[data-theme="dark"] .page-header { background: radial-gradient(ellipse 60% 70% at 50% 55%, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0) 72%); }
+html[data-theme="dark"] body.inner .section-lead strong { color: #ffd88f; }
+
+/* ---------- Pílulas, etiquetas e chips ---------- */
+html[data-theme="dark"] .eyebrow,
+html[data-theme="dark"] body.page-downloads .hero-badge,
+html[data-theme="dark"] .pill-tag { background: #3b2336; color: #ffd9e2; border-color: #c97b93; }
+html[data-theme="dark"] .chip-list li { background: #1c2850; color: #ffe1bf; border-color: #b17b58; }
+
+/* ---------- Painéis de madeira ---------- */
+html[data-theme="dark"] .wood-panel,
+html[data-theme="dark"] body.home .cta-banner-container {
+  background:
+    repeating-linear-gradient(180deg, transparent 0 46px, rgba(0, 0, 0, 0.22) 46px 48px),
+    #5e3b27;
+  border-color: #2a1409;
+  box-shadow: inset 0 0 0 4px #86583c, 0 8px 0 #170a03;
+}
+html[data-theme="dark"] .level-badge { background: #5e3b27; box-shadow: inset 0 0 0 3px #86583c, 0 4px 0 #170a03; }
+
+/* ---------- Botões de madeira ---------- */
+html[data-theme="dark"] .btn-pixel:not(.btn-pixel--sun) { background-color: #6b4430; border-color: #2a1409; color: #fbe7d2; }
+
+/* ---------- Colinas, árvores e gatinho ---------- */
+html[data-theme="dark"] .meadow-hills,
+html[data-theme="dark"] .meadow-front,
+html[data-theme="dark"] .meadow .tree,
+html[data-theme="dark"] .meadow .tuft { filter: brightness(0.5); }
+html[data-theme="dark"] .meadow .meadow-cat { filter: brightness(0.82) saturate(0.95); }
+html[data-theme="dark"] .meadow-wrap {
+  background: linear-gradient(
+    to top,
+    #2d5427 0, #2d5427 calc(var(--cell) * 12),
+    #365e2b calc(var(--cell) * 12), #365e2b calc(var(--cell) * 14),
+    #204523 calc(var(--cell) * 14), #204523 calc(var(--cell) * 15),
+    transparent calc(var(--cell) * 15)
+  );
+}
+
+/* ---------- Rodapé ---------- */
+html[data-theme="dark"] .footer-body { filter: none; }
+
+/* ==========================================================================
+   Superfícies claras → escuras (textos em tons de madeira clara)
+   Os seletores usam html[data-theme="dark"] body para vencer os estilos do tema claro.
+   ========================================================================== */
+
+/* Títulos dentro de cards/painéis */
+html[data-theme="dark"] body :is(
+  .highlight-title, .teaser-title, .card-link, .minigame-title, .step-title, .stage-panel-title,
+  .a11y-title, .demo-title, .flip-title, .team-name, .form-title, .form-label, .guide-h,
+  .copy-link, .window-title, .stage-node-num, .news-title, .dl-os, .req-table tbody th,
+  .step-list strong, .team-role, .contact-item h3, .module-group-title
+) { color: #ffe1bf; text-shadow: none; }
+
+html[data-theme="dark"] body .dl-os { text-shadow: 3px 3px 0 #070d22; color: #fff; }
+
+/* Textos corridos */
+html[data-theme="dark"] body :is(
+  .highlight-text, .teaser-desc, .showcase-caption p, .showcase-caption strong, .minigame-focus,
+  .minigame-desc, .step-desc, .stage-lead, .stage-text, .a11y-text, .team-desc, .dl-kicker, .dl-sub,
+  .dl-note, .step-list span, .card p, .card strong, .card em, .demo-text, .contact-desc,
+  .contact-item p, .stage-panel p, .stage-panel strong, .stage-panel em, .a11y-card p, .guide-panel p
+) { color: #e6d8c6; }
+
+html[data-theme="dark"] body :is(.demo-note, .flip-hint, .form-count, .game-number-tag, .progression-arrow, .spec-list dt, .req-table tbody th) { color: #d5b695; }
+
+/* Cards e superfícies */
+html[data-theme="dark"] body.home .card,
+html[data-theme="dark"] body .guide-panel,
+html[data-theme="dark"] body .req-wrap,
+html[data-theme="dark"] body .contact-card,
+html[data-theme="dark"] body .team-card,
+html[data-theme="dark"] body .a11y-demo,
+html[data-theme="dark"] body .stage-panel,
+html[data-theme="dark"] body .a11y-card,
+html[data-theme="dark"] body .progression-step,
+html[data-theme="dark"] body .showcase-card,
+html[data-theme="dark"] body .flip-face {
+  background-color: #2a2030;
+  border-color: #170a03;
+}
+html[data-theme="dark"] body.page-downloads .dl-card.is-detected { border-color: #8fd39f; box-shadow: inset 0 0 0 3px #2f5a3d, 0 8px 0 var(--wood-shadow); }
+
+html[data-theme="dark"] body.page-downloads .spec-list,
+html[data-theme="dark"] body .news-item { background: #221a28; border-color: #46374f; }
+html[data-theme="dark"] body.page-downloads .news-item { border-color: #170a03; }
+html[data-theme="dark"] body.page-downloads .spec-list > div { border-bottom-color: #46374f; }
+html[data-theme="dark"] body.page-downloads .spec-list dd,
+html[data-theme="dark"] body.page-downloads .news-item p,
+html[data-theme="dark"] body.page-downloads .req-table td,
+html[data-theme="dark"] body.page-downloads .req-table th { color: #e6d8c6; }
+html[data-theme="dark"] body.page-downloads .req-table tbody th { color: #d5b695; }
+html[data-theme="dark"] body.page-downloads .req-table thead th { color: #fff6e6; background: #5e3b27; border-bottom-color: #170a03; }
+html[data-theme="dark"] body.page-downloads .req-table th,
+html[data-theme="dark"] body.page-downloads .req-table td { border-bottom-color: #46374f; }
+html[data-theme="dark"] body.page-downloads .spec-list code,
+html[data-theme="dark"] body.page-downloads .step-list code { background: #3a2c44; color: #ffe1bf; }
+html[data-theme="dark"] body.page-downloads .size-value { color: #8fd39f; }
+html[data-theme="dark"] body.page-downloads .guide-tab { background: #4a3126; border-color: #170a03; color: #f2dcc0; }
+html[data-theme="dark"] body.page-downloads .guide-tab.is-active { background: #6b4430; }
+html[data-theme="dark"] body.page-downloads .release-notice { background: #2a2030; color: #e9f0ff; border-color: #86583c; }
+html[data-theme="dark"] body.page-downloads .dl-foot { color: #dfe8ff; }
+
+/* Formulário */
+html[data-theme="dark"] body .form-input,
+html[data-theme="dark"] body .form-group input,
+html[data-theme="dark"] body .form-group select,
+html[data-theme="dark"] body .form-group textarea {
+  background-color: #1b1522;
+  color: #f4e8d8;
+  border-color: #86583c;
+}
+html[data-theme="dark"] body .form-input::placeholder { color: #a48f7d; }
+
+html[data-theme="dark"] body.page-downloads .release-notice a,
+html[data-theme="dark"] body.page-downloads .copy-link:hover,
+html[data-theme="dark"] body.page-downloads .copy-link:focus-visible,
+html[data-theme="dark"] body.page-downloads .copy-link.is-copied { color: #8fd39f; border-bottom-color: #8fd39f; }
+html[data-theme="dark"] body.page-downloads .dl-card .dl-note { color: #e6d8c6; }
+html[data-theme="dark"] body.page-downloads .copy-link { border-bottom-color: #b17b58; }
+
+/* Rodapé: grama noturna */
+html[data-theme="dark"] .site-footer .footer-body,
+html[data-theme="dark"] .footer-body { background: linear-gradient(180deg, #2d5427 0, #234a24 120px, #17301a 100%); }
+
+/* Ícones dos destaques */
+html[data-theme="dark"] body.home .highlight-icon-box { background: #46374f; border-color: #170a03; color: #ffe1bf; }
+html[data-theme="dark"] body.home .card:hover .highlight-icon-box { background: #6b4430; color: #fff; }
