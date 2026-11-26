@@ -259,3 +259,6 @@ html[data-theme="dark"] body.page-modulos .modal-header { background: #46374f; b
 html[data-theme="dark"] body.page-modulos .modal-title { color: #ffe1bf; }
 html[data-theme="dark"] body.page-modulos .modal-desc { color: #e6d8c6; }
 html[data-theme="dark"] body.page-modulos .modal-body { background: transparent; }
+
+/* Neblina do desfoque sob as nuvens: azulada à noite */
+html[data-theme="dark"] .site-header::before { background: rgba(120, 150, 225, 0.22); }
