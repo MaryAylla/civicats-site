@@ -93,8 +93,8 @@ function setupScrollReveal() {
 
   const observerOptions = {
     root: null,
-    threshold: 0.12,
-    rootMargin: '0px 0px -40px 0px'
+    threshold: 0.05,
+    rootMargin: '0px 0px -10px 0px'
   };
 
   const revealObserver = new IntersectionObserver((entries, observer) => {
@@ -105,7 +105,7 @@ function setupScrollReveal() {
 
         setTimeout(() => {
           element.classList.add('is-visible');
-        }, Number(delay));
+        }, Number(delay) * 0.35);  // escalonamento curto entre cartões
 
         observer.unobserve(element);
       }
